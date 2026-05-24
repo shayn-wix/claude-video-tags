@@ -1,8 +1,33 @@
 {
-  "feature": [],
-  "main_elements": [],
-  "presenter_persona": [],
-  "call_to_action": [],
-  "key_message": [],
-  "tone_of_voice": []
+  "feature": [
+    "wireframe library",
+    "agency scalability",
+    "course monetization"
+  ],
+  "main_elements": [
+    "talking head",
+    "screen recording",
+    "client website showcase",
+    "animated text captions",
+    "mobile mockup"
+  ],
+  "presenter_persona": [
+    "agency owner",
+    "female entrepreneur",
+    "success story"
+  ],
+  "call_to_action": [
+    "no explicit CTA"
+  ],
+  "key_message": [
+    "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library"
+  ],
+  "tone_of_voice": [
+    "Aspirational & Results-Driven"
+  ],
+  "hook_line": [
+    "This one shift took our website builds to the next level and cut production time in half.",
+    "This one shift led to an additional $29,000 in revenue in just one year.",
+    "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status."
+  ]
 }
