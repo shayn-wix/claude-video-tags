@@ -220,6 +220,8 @@
     .tag-brand { background: rgba(108,110,245,0.15); color: #a0a2f5; }
     .tag-type { background: rgba(72,187,255,0.12); color: #72c8ff; }
     .tag-hook { background: rgba(76,175,130,0.15); color: #6dcfa0; }
+    .tag-legacy { background: rgba(245,200,66,0.1); color: #c9a832; font-style: italic; }
+    .tag-hero { background: rgba(245,98,98,0.12); color: #f58a8a; }
 
     /* ── Expanded row ── */
     .detail-row td {
@@ -319,7 +321,10 @@
     <select id="f-brand" onchange="applyFilters()"><option value="">All Brands</option></select>
     <select id="f-product" onchange="applyFilters()"><option value="">All Products</option></select>
     <select id="f-type" onchange="applyFilters()"><option value="">All Video Types</option></select>
-    <select id="f-hook" onchange="applyFilters()"><option value="">All Hook Strategies</option></select>
+    <select id="f-visual-hook" onchange="applyFilters()"><option value="">All Visual Hooks</option></select>
+    <select id="f-audio-hook" onchange="applyFilters()"><option value="">All Audio Hooks</option></select>
+    <select id="f-hero" onchange="applyFilters()"><option value="">All Heroes</option></select>
+    <select id="f-voice-over" onchange="applyFilters()"><option value="">Voice Over</option></select>
     <span class="filter-count" id="filter-count"></span>
     <button class="btn" onclick="clearFilters()">Clear</button>
   </div>
@@ -339,9 +344,10 @@
           <th onclick="sortBy('brand')">Brand <span class="sort-arrow">↕</span></th>
           <th onclick="sortBy('product')">Product <span class="sort-arrow">↕</span></th>
           <th onclick="sortBy('video_type')">Type <span class="sort-arrow">↕</span></th>
-          <th>Feature</th>
-          <th onclick="sortBy('hook_strategy')">Hook <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('tone_of_voice')">Tone</th>
+          <th onclick="sortBy('hero')">Hero <span class="sort-arrow">↕</span></th>
+          <th onclick="sortBy('visual_hook')">Visual Hook <span class="sort-arrow">↕</span></th>
+          <th onclick="sortBy('audio_hook')">Audio Hook <span class="sort-arrow">↕</span></th>
+          <th onclick="sortBy('tone_of_voice')">Tone <span class="sort-arrow">↕</span></th>
           <th onclick="sortBy('analyzed_at')">Analyzed <span class="sort-arrow">↕</span></th>
         </tr>
       </thead>
@@ -429,19 +435,37 @@
   }
 
   // ── Filters ──────────────────────────────────────────
+  // getVisualHook: use visual_hook if present, fall back to legacy hook_strategy
+  function getVisualHook(c) {
+    return c.visual_hook || (c.hook_strategy ? c.hook_strategy + " (legacy)" : null);
+  }
+  function getVisualHookRaw(c) {
+    return c.visual_hook || c.hook_strategy || null;
+  }
+
   function buildFilters() {
-    const opts = { brand: new Set(), product: new Set(), type: new Set(), hook: new Set() };
+    const opts = {
+      brand: new Set(), product: new Set(), type: new Set(),
+      visualHook: new Set(), audioHook: new Set(), hero: new Set(), voiceOver: new Set()
+    };
     allEntries.forEach(e => {
       const c = e.card || {};
       if (c.brand) opts.brand.add(c.brand);
       if (c.product) opts.product.add(c.product);
       if (c.video_type) opts.type.add(c.video_type);
-      if (c.hook_strategy) opts.hook.add(c.hook_strategy);
+      const vh = getVisualHookRaw(c);
+      if (vh) opts.visualHook.add(vh);
+      if (c.audio_hook) opts.audioHook.add(c.audio_hook);
+      if (c.hero) opts.hero.add(c.hero);
+      if (c.voice_over) opts.voiceOver.add(c.voice_over);
     });
     fillSelect("f-brand", "All Brands", opts.brand);
     fillSelect("f-product", "All Products", opts.product);
     fillSelect("f-type", "All Video Types", opts.type);
-    fillSelect("f-hook", "All Hook Strategies", opts.hook);
+    fillSelect("f-visual-hook", "All Visual Hooks", opts.visualHook);
+    fillSelect("f-audio-hook", "All Audio Hooks", opts.audioHook);
+    fillSelect("f-hero", "All Heroes", opts.hero);
+    fillSelect("f-voice-over", "Voice Over", opts.voiceOver);
   }
 
   function fillSelect(id, placeholder, values) {
@@ -455,14 +479,20 @@
     const brand = document.getElementById("f-brand").value;
     const product = document.getElementById("f-product").value;
     const type = document.getElementById("f-type").value;
-    const hook = document.getElementById("f-hook").value;
+    const visualHook = document.getElementById("f-visual-hook").value;
+    const audioHook = document.getElementById("f-audio-hook").value;
+    const hero = document.getElementById("f-hero").value;
+    const voiceOver = document.getElementById("f-voice-over").value;
 
     filtered = allEntries.filter(e => {
       const c = e.card || {};
       if (brand && c.brand !== brand) return false;
       if (product && c.product !== product) return false;
       if (type && c.video_type !== type) return false;
-      if (hook && c.hook_strategy !== hook) return false;
+      if (visualHook && getVisualHookRaw(c) !== visualHook) return false;
+      if (audioHook && c.audio_hook !== audioHook) return false;
+      if (hero && c.hero !== hero) return false;
+      if (voiceOver && c.voice_over !== voiceOver) return false;
       if (q) {
         const haystack = JSON.stringify(e).toLowerCase();
         if (!haystack.includes(q)) return false;
@@ -483,7 +513,10 @@
     document.getElementById("f-brand").value = "";
     document.getElementById("f-product").value = "";
     document.getElementById("f-type").value = "";
-    document.getElementById("f-hook").value = "";
+    document.getElementById("f-visual-hook").value = "";
+    document.getElementById("f-audio-hook").value = "";
+    document.getElementById("f-hero").value = "";
+    document.getElementById("f-voice-over").value = "";
     applyFilters();
   }
 
@@ -493,9 +526,10 @@
     else { sortField = field; sortAsc = true; }
     document.querySelectorAll("thead th").forEach(th => {
       th.classList.remove("sorted");
-      th.querySelector(".sort-arrow").textContent = "↕";
+      if (th.querySelector(".sort-arrow")) th.querySelector(".sort-arrow").textContent = "↕";
     });
-    const idx = ["video_id","brand","product","video_type","","hook_strategy","tone_of_voice","analyzed_at"].indexOf(field);
+    const colFields = ["video_id","brand","product","video_type","hero","visual_hook","audio_hook","tone_of_voice","analyzed_at"];
+    const idx = colFields.indexOf(field);
     if (idx >= 0) {
       const th = document.querySelectorAll("thead th")[idx];
       th.classList.add("sorted");
@@ -515,6 +549,7 @@
 
   function getField(entry, field) {
     if (field === "analyzed_at") return entry.analyzed_at || "";
+    if (field === "visual_hook") return getVisualHookRaw(entry.card || "") || "";
     return String((entry.card || {})[field] || "");
   }
 
@@ -535,7 +570,10 @@
       { key: "brand", label: "Brand" },
       { key: "video_type", label: "Video Type" },
       { key: "product", label: "Product" },
-      { key: "hook_strategy", label: "Hook Strategy" },
+      { key: "visual_hook", label: "Visual Hook" },
+      { key: "audio_hook", label: "Audio Hook" },
+      { key: "hero", label: "Hero" },
+      { key: "voice_over", label: "Voice Over" },
     ];
     const panel = document.getElementById("charts-panel");
     panel.innerHTML = fields.map(f => buildChart(f.key, f.label)).join("");
@@ -544,7 +582,12 @@
   function buildChart(field, label) {
     const counts = {};
     allEntries.forEach(e => {
-      const v = (e.card || {})[field] || "unknown";
+      let v;
+      if (field === "visual_hook") {
+        v = getVisualHookRaw(e.card || {}) || "unknown";
+      } else {
+        v = (e.card || {})[field] || "unknown";
+      }
       counts[v] = (counts[v] || 0) + 1;
     });
     const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -583,27 +626,48 @@
       const date = e.analyzed_at ? new Date(e.analyzed_at).toLocaleDateString(undefined, {month:"short", day:"numeric", year:"numeric"}) : "—";
       const isExpanded = expandedId === e.id;
 
+      // Visual hook: prefer visual_hook, fall back to hook_strategy with legacy badge
+      const vhValue = c.visual_hook || null;
+      const legacyHook = !c.visual_hook && c.hook_strategy ? c.hook_strategy : null;
+      const vhCell = vhValue
+        ? `<span class="tag tag-hook">${esc(vhValue)}</span>`
+        : (legacyHook ? `<span class="tag tag-legacy">${esc(legacyHook)}</span>` : `<span class="muted">—</span>`);
+
+      const ahCell = c.audio_hook
+        ? `<span class="tag tag-hook">${esc(c.audio_hook)}</span>`
+        : `<span class="muted">—</span>`;
+
+      const heroCell = c.hero
+        ? `<span class="tag tag-hero">${esc(c.hero)}</span>`
+        : `<span class="muted">—</span>`;
+
       let rows = `<tr onclick="toggleRow('${esc(e.id)}')" ${isExpanded ? 'class="expanded"' : ''}>
         <td>${esc(c.video_id || e.filename || "—")}</td>
         <td><span class="tag tag-brand">${esc(c.brand || "—")}</span></td>
         <td class="muted">${esc(c.product || "—")}</td>
         <td><span class="tag tag-type">${esc(c.video_type || "—")}</span></td>
-        <td class="muted">${features.map(f => `<span class="tag" style="background:var(--surface2);color:var(--text2)">${esc(f)}</span>`).join("")}${c.feature?.length > 3 ? `<span class="tag" style="background:var(--surface2);color:var(--text2)">+${c.feature.length-3}</span>` : ""}</td>
-        <td><span class="tag tag-hook">${esc(c.hook_strategy || "—")}</span></td>
+        <td>${heroCell}</td>
+        <td>${vhCell}</td>
+        <td>${ahCell}</td>
         <td class="muted">${esc(c.tone_of_voice || "—")}</td>
         <td class="muted">${date}</td>
       </tr>`;
 
       if (isExpanded) {
         rows += `<tr class="detail-row" id="detail-${esc(e.id)}">
-          <td colspan="8">
+          <td colspan="9">
             <div class="detail-inner">
               ${detailField("Key Message", c.key_message)}
               ${detailField("Tone of Voice", c.tone_of_voice)}
+              ${detailField("Audio Style", c.audio_style)}
+              ${detailField("Voice Over", c.voice_over)}
+              ${detailField("Pacing", c.pacing)}
+              ${detailField("Hook Line", c.hook_line)}
               ${detailField("Call to Action", Array.isArray(c.call_to_action) ? c.call_to_action.join(", ") : c.call_to_action)}
               ${detailField("Main Elements", Array.isArray(c.main_elements) ? c.main_elements.join(", ") : c.main_elements)}
               ${detailField("Presenter Persona", Array.isArray(c.presenter_persona) ? c.presenter_persona.join(", ") : c.presenter_persona)}
               ${detailField("All Features", Array.isArray(c.feature) ? c.feature.join(", ") : c.feature)}
+              ${c.hook_strategy && !c.visual_hook ? detailField("Hook Strategy (legacy)", c.hook_strategy) : ""}
               ${detailField("File", e.filename)}
               ${detailField("Duration", e.fingerprint?.duration_seconds ? e.fingerprint.duration_seconds + "s" : "—")}
               ${detailField("Analyzed On", e.analyzed_at ? new Date(e.analyzed_at).toLocaleString() : "—")}
@@ -630,17 +694,20 @@
 
   // ── CSV ──────────────────────────────────────────────
   function downloadCSV() {
-    const cols = ["video_id","brand","product","video_type","feature","main_elements",
-                  "presenter_persona","key_message","tone_of_voice","hook_strategy",
+    const cols = ["video_id","brand","product","hero","video_type","feature","main_elements",
+                  "presenter_persona","key_message","tone_of_voice",
+                  "visual_hook","audio_hook","audio_style","voice_over","pacing","hook_line",
                   "call_to_action","filename","duration_seconds","analyzed_at"];
     const rows = [cols.join(",")];
     filtered.forEach(e => {
       const c = e.card || {};
       rows.push(cols.map(col => {
-        let v = col === "filename" ? e.filename
-              : col === "duration_seconds" ? e.fingerprint?.duration_seconds
-              : col === "analyzed_at" ? e.analyzed_at
-              : c[col];
+        let v;
+        if (col === "filename") v = e.filename;
+        else if (col === "duration_seconds") v = e.fingerprint?.duration_seconds;
+        else if (col === "analyzed_at") v = e.analyzed_at;
+        else if (col === "visual_hook") v = c.visual_hook || c.hook_strategy;  // legacy fallback
+        else v = c[col];
         if (Array.isArray(v)) v = v.join("; ");
         v = String(v || "");
         if (v.includes(",") || v.includes('"') || v.includes("\n")) v = '"' + v.replace(/"/g,'""') + '"';
