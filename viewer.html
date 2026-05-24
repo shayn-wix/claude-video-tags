@@ -412,6 +412,7 @@
       <select id="f-cta"         onchange="applyFilters()"><option value="">All CTAs</option></select>
       <select id="f-feature"     onchange="applyFilters()"><option value="">All Features</option></select>
       <select id="f-persona"     onchange="applyFilters()"><option value="">All Personas</option></select>
+      <select id="f-main-el"     onchange="applyFilters()"><option value="">All Main Elements</option></select>
     </div>
   </div>
 
@@ -607,7 +608,8 @@
       brand: new Set(), product: new Set(), type: new Set(),
       visualHook: new Set(), audioHook: new Set(), audioStyle: new Set(),
       hero: new Set(), voiceOver: new Set(), pacing: new Set(),
-      tone: new Set(), cta: new Set(), feature: new Set(), persona: new Set()
+      tone: new Set(), cta: new Set(), feature: new Set(), persona: new Set(),
+      mainEl: new Set()
     };
     allEntries.forEach(e => {
       const c = e.card || {};
@@ -625,6 +627,7 @@
       if (c.call_to_action)     opts.cta.add(c.call_to_action);
       if (c.feature)            opts.feature.add(c.feature);
       if (c.presenter_persona)  opts.persona.add(c.presenter_persona);
+      if (c.main_elements)      opts.mainEl.add(c.main_elements);
     });
     fillSelect("f-brand",       "All Brands",        opts.brand);
     fillSelect("f-product",     "All Products",      opts.product);
@@ -639,6 +642,7 @@
     fillSelect("f-cta",         "All CTAs",          opts.cta);
     fillSelect("f-feature",     "All Features",      opts.feature);
     fillSelect("f-persona",     "All Personas",      opts.persona);
+    fillSelect("f-main-el",     "All Main Elements", opts.mainEl);
   }
 
   function fillSelect(id, placeholder, values) {
@@ -662,11 +666,12 @@
     const cta        = document.getElementById("f-cta").value;
     const feature    = document.getElementById("f-feature").value;
     const persona    = document.getElementById("f-persona").value;
+    const mainEl     = document.getElementById("f-main-el").value;
 
     // Highlight active selects
     ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
      "f-audio-style","f-hero","f-voice-over","f-pacing",
-     "f-tone","f-cta","f-feature","f-persona"].forEach(id => {
+     "f-tone","f-cta","f-feature","f-persona","f-main-el"].forEach(id => {
       const el = document.getElementById(id);
       el.classList.toggle("active", !!el.value);
     });
@@ -686,6 +691,7 @@
       if (cta        && c.call_to_action !== cta)          return false;
       if (feature    && c.feature    !== feature)          return false;
       if (persona    && c.presenter_persona !== persona)   return false;
+      if (mainEl     && c.main_elements !== mainEl)         return false;
       if (q) { if (!JSON.stringify(e).toLowerCase().includes(q)) return false; }
       return true;
     });
@@ -702,7 +708,7 @@
     document.getElementById("search").value = "";
     ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
      "f-audio-style","f-hero","f-voice-over","f-pacing",
-     "f-tone","f-cta","f-feature","f-persona"].forEach(id => {
+     "f-tone","f-cta","f-feature","f-persona","f-main-el"].forEach(id => {
       document.getElementById(id).value = "";
       document.getElementById(id).classList.remove("active");
     });
