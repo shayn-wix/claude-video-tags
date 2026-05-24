@@ -188,6 +188,45 @@
     .filter-row2 select:focus { border-color: var(--accent); }
     .filter-row2 select.active { border-color: var(--accent); color: var(--accent); }
 
+    /* ── Multi-select filters ── */
+    .ms-wrap { position: relative; display: inline-block; }
+    .ms-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 10px; border-radius: 7px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-size: 12.5px; cursor: pointer;
+      transition: border-color 0.15s; white-space: nowrap;
+      min-width: 120px; user-select: none;
+    }
+    .ms-btn:hover { border-color: var(--accent); }
+    .ms-btn.active { border-color: var(--accent); color: var(--accent); }
+    .ms-arrow { margin-left: auto; opacity: 0.5; font-size: 10px; flex-shrink: 0; }
+    .ms-panel {
+      position: absolute; top: calc(100% + 4px); left: 0;
+      min-width: 180px; max-height: 220px; overflow-y: auto;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      z-index: 100; display: none; padding: 4px 0;
+    }
+    .ms-panel.open { display: block; }
+    .ms-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 12px; cursor: pointer; font-size: 12.5px;
+      color: var(--text); transition: background 0.1s;
+    }
+    .ms-item:hover { background: var(--surface2); }
+    .ms-item input[type="checkbox"] { accent-color: var(--accent); width: 13px; height: 13px; flex-shrink: 0; cursor: pointer; }
+    .ms-empty { padding: 8px 12px; font-size: 12px; color: var(--text2); }
+
+    /* ── Tag list in cells ── */
+    .tag-cell { white-space: normal !important; vertical-align: top !important; max-width: 220px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 3px; max-height: 76px; overflow-y: auto; }
+    .tag-el { background: rgba(108,110,245,0.12); color: #a0a8f0; border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+
+    /* ── Scrollable text cells ── */
+    .scroll-cell { white-space: normal !important; vertical-align: top !important; }
+    .cell-text { max-height: 68px; overflow-y: auto; line-height: 1.4; }
+
     /* ── Toggle sections ── */
     .section-toggle {
       display: flex;
@@ -398,22 +437,7 @@
       <span class="filter-count" id="filter-count"></span>
       <button class="btn" onclick="clearFilters()">Clear</button>
     </div>
-    <div class="filter-row2">
-      <select id="f-brand"       onchange="applyFilters()"><option value="">All Brands</option></select>
-      <select id="f-product"     onchange="applyFilters()"><option value="">All Products</option></select>
-      <select id="f-type"        onchange="applyFilters()"><option value="">All Types</option></select>
-      <select id="f-visual-hook" onchange="applyFilters()"><option value="">All Visual Hooks</option></select>
-      <select id="f-audio-hook"  onchange="applyFilters()"><option value="">All Audio Hooks</option></select>
-      <select id="f-audio-style" onchange="applyFilters()"><option value="">All Audio Styles</option></select>
-      <select id="f-hero"        onchange="applyFilters()"><option value="">All Heroes</option></select>
-      <select id="f-voice-over"  onchange="applyFilters()"><option value="">Voice Over</option></select>
-      <select id="f-pacing"      onchange="applyFilters()"><option value="">All Pacing</option></select>
-      <select id="f-tone"        onchange="applyFilters()"><option value="">All Tones</option></select>
-      <select id="f-cta"         onchange="applyFilters()"><option value="">All CTAs</option></select>
-      <select id="f-feature"     onchange="applyFilters()"><option value="">All Features</option></select>
-      <select id="f-persona"     onchange="applyFilters()"><option value="">All Personas</option></select>
-      <select id="f-main-el"     onchange="applyFilters()"><option value="">All Main Elements</option></select>
-    </div>
+    <div class="filter-row2" id="filter-row2"></div>
   </div>
 
   <!-- Charts toggle -->
@@ -455,6 +479,26 @@
   const GITHUB_RAW   = "https://raw.githubusercontent.com/shayn-wix/claude-video-tags/main/history.json";
   const LOCAL_FALLBACK = "./history.json";
   const LS_KEY       = "video-analysis-cols-v1";
+
+  // ── Filter definitions ────────────────────────────────
+  const FILTER_DEFS = [
+    { id: "brand",       label: "Brand",         field: "brand",             mv: false },
+    { id: "product",     label: "Product",       field: "product",           mv: false },
+    { id: "type",        label: "Type",          field: "video_type",        mv: false },
+    { id: "visual-hook", label: "Visual Hook",   field: "visual_hook",       mv: false },
+    { id: "audio-hook",  label: "Audio Hook",    field: "audio_hook",        mv: false },
+    { id: "audio-style", label: "Audio Style",   field: "audio_style",       mv: false },
+    { id: "hero",        label: "Hero",          field: "hero",              mv: false },
+    { id: "voice-over",  label: "Voice Over",    field: "voice_over",        mv: false },
+    { id: "pacing",      label: "Pacing",        field: "pacing",            mv: false },
+    { id: "tone",        label: "Tone",          field: "tone_of_voice",     mv: false },
+    { id: "cta",         label: "CTA",           field: "call_to_action",    mv: true  },
+    { id: "feature",     label: "Feature",       field: "feature",           mv: true  },
+    { id: "persona",     label: "Persona",       field: "presenter_persona", mv: true  },
+    { id: "main-el",     label: "Main Elements", field: "main_elements",     mv: true  },
+  ];
+  let filterState = {};
+  FILTER_DEFS.forEach(f => { filterState[f.id] = new Set(); });
 
   // ── Column definitions ───────────────────────────────
   const COLUMNS = [
@@ -529,13 +573,20 @@
     document.getElementById("col-panel").classList.toggle("open");
   }
 
-  // Close column panel when clicking outside
+  // Close panels when clicking outside
   document.addEventListener("click", e => {
     const panel = document.getElementById("col-panel");
     const btn   = document.getElementById("col-btn");
     if (panel.classList.contains("open") && !panel.contains(e.target) && e.target !== btn) {
       panel.classList.remove("open");
     }
+    FILTER_DEFS.forEach(f => {
+      const p = document.getElementById("ms-panel-" + f.id);
+      const b = document.getElementById("ms-btn-" + f.id);
+      if (p && p.classList.contains("open") && !p.contains(e.target) && b && !b.contains(e.target)) {
+        p.classList.remove("open");
+      }
+    });
   });
 
   // ── Load ─────────────────────────────────────────────
@@ -604,98 +655,79 @@
   function getVisualHookRaw(c) { return c.visual_hook || c.hook_strategy || null; }
 
   function buildFilters() {
-    const opts = {
-      brand: new Set(), product: new Set(), type: new Set(),
-      visualHook: new Set(), audioHook: new Set(), audioStyle: new Set(),
-      hero: new Set(), voiceOver: new Set(), pacing: new Set(),
-      tone: new Set(), cta: new Set(), feature: new Set(), persona: new Set(),
-      mainEl: new Set()
-    };
+    const opts = {};
+    FILTER_DEFS.forEach(f => { opts[f.id] = new Set(); });
     allEntries.forEach(e => {
       const c = e.card || {};
-      if (c.brand)       opts.brand.add(c.brand);
-      if (c.product)     opts.product.add(c.product);
-      if (c.video_type)  opts.type.add(c.video_type);
-      const vh = getVisualHookRaw(c);
-      if (vh)            opts.visualHook.add(vh);
-      if (c.audio_hook)  opts.audioHook.add(c.audio_hook);
-      if (c.audio_style) opts.audioStyle.add(c.audio_style);
-      if (c.hero)        opts.hero.add(c.hero);
-      if (c.voice_over)  opts.voiceOver.add(c.voice_over);
-      if (c.pacing)      opts.pacing.add(c.pacing);
-      if (c.tone_of_voice)      opts.tone.add(c.tone_of_voice);
-      if (c.call_to_action)     opts.cta.add(c.call_to_action);
-      if (c.feature)            opts.feature.add(c.feature);
-      if (c.presenter_persona)  opts.persona.add(c.presenter_persona);
-      if (c.main_elements)      opts.mainEl.add(c.main_elements);
+      FILTER_DEFS.forEach(f => {
+        const raw = f.field === "visual_hook" ? getVisualHookRaw(c) : c[f.field];
+        if (f.mv) { splitMV(raw).forEach(v => opts[f.id].add(v)); }
+        else { if (raw) opts[f.id].add(String(raw)); }
+      });
     });
-    fillSelect("f-brand",       "All Brands",        opts.brand);
-    fillSelect("f-product",     "All Products",      opts.product);
-    fillSelect("f-type",        "All Types",         opts.type);
-    fillSelect("f-visual-hook", "All Visual Hooks",  opts.visualHook);
-    fillSelect("f-audio-hook",  "All Audio Hooks",   opts.audioHook);
-    fillSelect("f-audio-style", "All Audio Styles",  opts.audioStyle);
-    fillSelect("f-hero",        "All Heroes",        opts.hero);
-    fillSelect("f-voice-over",  "Voice Over",        opts.voiceOver);
-    fillSelect("f-pacing",      "All Pacing",        opts.pacing);
-    fillSelect("f-tone",        "All Tones",         opts.tone);
-    fillSelect("f-cta",         "All CTAs",          opts.cta);
-    fillSelect("f-feature",     "All Features",      opts.feature);
-    fillSelect("f-persona",     "All Personas",      opts.persona);
-    fillSelect("f-main-el",     "All Main Elements", opts.mainEl);
+    const row2 = document.getElementById("filter-row2");
+    row2.innerHTML = FILTER_DEFS.map(f => buildMsWrap(f, opts[f.id])).join("");
   }
 
-  function fillSelect(id, placeholder, values) {
-    const sel = document.getElementById(id);
-    sel.innerHTML = `<option value="">${placeholder}</option>` +
-      [...values].sort().map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
+  function buildMsWrap(def, values) {
+    const items = [...values].sort().map(v => `
+      <label class="ms-item">
+        <input type="checkbox" value="${esc(v)}" onchange="toggleFilter('${def.id}',this.value,this.checked)">
+        ${esc(v)}
+      </label>`).join("");
+    return `<div class="ms-wrap" id="ms-${def.id}">
+      <div class="ms-btn" onclick="toggleMsPanel('${def.id}')" id="ms-btn-${def.id}">
+        <span id="ms-label-${def.id}">${esc(def.label)}</span>
+        <span class="ms-arrow">&#9662;</span>
+      </div>
+      <div class="ms-panel" id="ms-panel-${def.id}">
+        ${items || '<div class="ms-empty">No data</div>'}
+      </div>
+    </div>`;
+  }
+
+  function toggleMsPanel(id) {
+    FILTER_DEFS.forEach(f => {
+      if (f.id !== id) document.getElementById("ms-panel-" + f.id)?.classList.remove("open");
+    });
+    document.getElementById("ms-panel-" + id).classList.toggle("open");
+  }
+
+  function toggleFilter(filterId, value, checked) {
+    if (checked) filterState[filterId].add(value);
+    else filterState[filterId].delete(value);
+    updateMsBtn(filterId);
+    applyFilters();
+  }
+
+  function updateMsBtn(id) {
+    const def = FILTER_DEFS.find(f => f.id === id);
+    const s = filterState[id];
+    const btn = document.getElementById("ms-btn-" + id);
+    const lbl = document.getElementById("ms-label-" + id);
+    if (!btn || !lbl) return;
+    if (s.size === 0) { lbl.textContent = def.label; btn.classList.remove("active"); }
+    else if (s.size === 1) { lbl.textContent = [...s][0]; btn.classList.add("active"); }
+    else { lbl.textContent = def.label + " (" + s.size + ")"; btn.classList.add("active"); }
   }
 
   function applyFilters() {
-    const q          = document.getElementById("search").value.toLowerCase();
-    const brand      = document.getElementById("f-brand").value;
-    const product    = document.getElementById("f-product").value;
-    const type       = document.getElementById("f-type").value;
-    const visualHook = document.getElementById("f-visual-hook").value;
-    const audioHook  = document.getElementById("f-audio-hook").value;
-    const audioStyle = document.getElementById("f-audio-style").value;
-    const hero       = document.getElementById("f-hero").value;
-    const voiceOver  = document.getElementById("f-voice-over").value;
-    const pacing     = document.getElementById("f-pacing").value;
-    const tone       = document.getElementById("f-tone").value;
-    const cta        = document.getElementById("f-cta").value;
-    const feature    = document.getElementById("f-feature").value;
-    const persona    = document.getElementById("f-persona").value;
-    const mainEl     = document.getElementById("f-main-el").value;
-
-    // Highlight active selects
-    ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
-     "f-audio-style","f-hero","f-voice-over","f-pacing",
-     "f-tone","f-cta","f-feature","f-persona","f-main-el"].forEach(id => {
-      const el = document.getElementById(id);
-      el.classList.toggle("active", !!el.value);
-    });
-
+    const q = document.getElementById("search").value.toLowerCase();
     filtered = allEntries.filter(e => {
       const c = e.card || {};
-      if (brand      && c.brand      !== brand)            return false;
-      if (product    && c.product    !== product)          return false;
-      if (type       && c.video_type !== type)             return false;
-      if (visualHook && getVisualHookRaw(c) !== visualHook) return false;
-      if (audioHook  && c.audio_hook !== audioHook)        return false;
-      if (audioStyle && c.audio_style !== audioStyle)      return false;
-      if (hero       && c.hero       !== hero)             return false;
-      if (voiceOver  && c.voice_over !== voiceOver)        return false;
-      if (pacing     && c.pacing     !== pacing)           return false;
-      if (tone       && c.tone_of_voice !== tone)          return false;
-      if (cta        && c.call_to_action !== cta)          return false;
-      if (feature    && c.feature    !== feature)          return false;
-      if (persona    && c.presenter_persona !== persona)   return false;
-      if (mainEl     && c.main_elements !== mainEl)         return false;
-      if (q) { if (!JSON.stringify(e).toLowerCase().includes(q)) return false; }
+      for (const f of FILTER_DEFS) {
+        const sel = filterState[f.id];
+        if (!sel || sel.size === 0) continue;
+        const raw = f.field === "visual_hook" ? getVisualHookRaw(c) : c[f.field];
+        if (f.mv) {
+          if (!splitMV(raw).some(v => sel.has(v))) return false;
+        } else {
+          if (!sel.has(String(raw || ""))) return false;
+        }
+      }
+      if (q && !JSON.stringify(e).toLowerCase().includes(q)) return false;
       return true;
     });
-
     sortEntries();
     renderTable();
     document.getElementById("filter-count").textContent =
@@ -706,11 +738,11 @@
 
   function clearFilters() {
     document.getElementById("search").value = "";
-    ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
-     "f-audio-style","f-hero","f-voice-over","f-pacing",
-     "f-tone","f-cta","f-feature","f-persona","f-main-el"].forEach(id => {
-      document.getElementById(id).value = "";
-      document.getElementById(id).classList.remove("active");
+    FILTER_DEFS.forEach(f => {
+      filterState[f.id] = new Set();
+      updateMsBtn(f.id);
+      document.querySelectorAll("#ms-panel-" + f.id + " input[type=\"checkbox\"]")
+        .forEach(cb => { cb.checked = false; });
     });
     applyFilters();
   }
@@ -810,25 +842,13 @@
     if (key === "audio_style") return { html: c.audio_style ? `<span class="tag tag-style">${esc(c.audio_style)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
     if (key === "voice_over")  return { html: esc(c.voice_over || "&#8212;"), cls: "muted" };
     if (key === "pacing")      return { html: esc(c.pacing || "&#8212;"), cls: "muted" };
-    if (key === "key_message") return { html: esc(c.key_message || "&#8212;"), cls: "wide" };
-    if (key === "hook_line")   return { html: esc(c.hook_line || "&#8212;"), cls: "wide" };
+    if (key === "key_message") return { html: c.key_message ? `<div class="cell-text">${esc(c.key_message)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
+    if (key === "hook_line") return { html: c.hook_line ? `<div class="cell-text">${esc(c.hook_line)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
     if (key === "tone_of_voice") return { html: esc(c.tone_of_voice || "&#8212;"), cls: "muted" };
-    if (key === "call_to_action") {
-      const v = Array.isArray(c.call_to_action) ? c.call_to_action.join(", ") : (c.call_to_action || "");
-      return { html: esc(v || "&#8212;"), cls: "muted" };
-    }
-    if (key === "main_elements") {
-      const v = Array.isArray(c.main_elements) ? c.main_elements.join(", ") : (c.main_elements || "");
-      return { html: esc(v || "&#8212;"), cls: "muted" };
-    }
-    if (key === "presenter_persona") {
-      const v = Array.isArray(c.presenter_persona) ? c.presenter_persona.join(", ") : (c.presenter_persona || "");
-      return { html: esc(v || "&#8212;"), cls: "muted" };
-    }
-    if (key === "feature") {
-      const v = Array.isArray(c.feature) ? c.feature.join(", ") : (c.feature || "");
-      return { html: esc(v || "&#8212;"), cls: "muted" };
-    }
+    if (key === "call_to_action") return { html: renderTagList(c.call_to_action), cls: "tag-cell" };
+    if (key === "main_elements") return { html: renderTagList(c.main_elements), cls: "tag-cell" };
+    if (key === "presenter_persona") return { html: renderTagList(c.presenter_persona), cls: "tag-cell" };
+    if (key === "feature") return { html: renderTagList(c.feature), cls: "tag-cell" };
     if (key === "filename")   return { html: esc(entry.filename || "&#8212;"), cls: "muted" };
     if (key === "duration")   return { html: entry.fingerprint?.duration_seconds ? esc(entry.fingerprint.duration_seconds + "s") : "&#8212;", cls: "muted" };
     if (key === "analyzed_at") {
@@ -931,6 +951,16 @@
     return String(str ?? "")
       .replace(/&/g,"&amp;").replace(/</g,"&lt;")
       .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function splitMV(v) {
+    if (!v) return [];
+    if (Array.isArray(v)) return v.map(x => String(x).trim()).filter(Boolean);
+    return String(v).split(",").map(x => x.trim()).filter(Boolean);
+  }
+  function renderTagList(val) {
+    const items = splitMV(val);
+    if (!items.length) return "<span class='muted'>&#8212;</span>";
+    return `<div class="tag-list">${items.map(v => `<span class="tag tag-el">${esc(v)}</span>`).join("")}</div>`;
   }
   function showToast(msg) {
     const t = document.getElementById("toast");
