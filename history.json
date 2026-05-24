@@ -1,5 +1,253 @@
 {
   "version": 1,
-  "last_updated": "",
-  "entries": []
+  "last_updated": "2026-05-24T17:52:01Z",
+  "entries": [
+    {
+      "id": "3d42eb13",
+      "filename": "H1 - WIX UGC.mp4",
+      "fingerprint": {
+        "size_bytes": 41073152,
+        "duration_seconds": 37.2
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H1",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This one shift took our website builds to the next level and cut production time in half.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "86eb44af",
+      "filename": "H2 - WIX UGC.mp4",
+      "fingerprint": {
+        "size_bytes": 41642167,
+        "duration_seconds": 37.1
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H2",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This one shift led to an additional $29,000 in revenue in just one year.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "bbadc261",
+      "filename": "H3 - WIX UGC.mp4",
+      "fingerprint": {
+        "size_bytes": 43175139,
+        "duration_seconds": 38.5
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H3",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability",
+          "course monetization"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions",
+          "mobile mockup"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "5f5e132c",
+      "filename": "H1 - WIX UGC copy.mp4",
+      "fingerprint": {
+        "size_bytes": 84690577,
+        "duration_seconds": 37.3
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H1 (alternate crop)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This one shift took our website builds to the next level and cut production time in half.",
+        "call_to_action": "no explicit CTA",
+        "note": "alternate crop of H1"
+      }
+    },
+    {
+      "id": "d3e8fff0",
+      "filename": "H2 - WIX UGC copy.mp4",
+      "fingerprint": {
+        "size_bytes": 84287396,
+        "duration_seconds": 37.3
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H2 (alternate crop)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This one shift led to an additional $29,000 in revenue in just one year.",
+        "call_to_action": "no explicit CTA",
+        "note": "alternate crop of H2"
+      }
+    },
+    {
+      "id": "70fa2b48",
+      "filename": "H3 - WIX UGC copy.mp4",
+      "fingerprint": {
+        "size_bytes": 87049072,
+        "duration_seconds": 38.5
+      },
+      "analyzed_at": "2026-05-24T17:52:00Z",
+      "card": {
+        "video_id": "Alexsandra UGC \u2014 Agency Revenue H3 (alternate crop)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "UGC",
+        "feature": [
+          "wireframe library",
+          "agency scalability",
+          "course monetization"
+        ],
+        "hero": "woman",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "client website showcase",
+          "animated text captions",
+          "mobile mockup"
+        ],
+        "presenter_persona": [
+          "agency owner",
+          "female entrepreneur",
+          "success story"
+        ],
+        "key_message": "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "pacing": "steady",
+        "hook_line": "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status.",
+        "call_to_action": "no explicit CTA",
+        "note": "alternate crop of H3"
+      }
+    }
+  ]
 }
