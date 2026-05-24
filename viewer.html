@@ -41,6 +41,9 @@
       border-bottom: 1px solid var(--border);
       flex-wrap: wrap;
       gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
     .header-left h1 {
       font-size: 20px;
@@ -49,13 +52,9 @@
       color: var(--text);
     }
     .header-left h1 span { color: var(--accent); }
-    .last-updated {
-      font-size: 12px;
-      color: var(--text2);
-      margin-top: 3px;
-    }
+    .last-updated { font-size: 12px; color: var(--text2); margin-top: 3px; }
     .last-updated b { color: var(--text); }
-    .header-right { display: flex; gap: 10px; align-items: center; }
+    .header-right { display: flex; gap: 10px; align-items: center; position: relative; }
 
     .btn {
       padding: 7px 14px;
@@ -71,6 +70,60 @@
     .btn:hover { background: var(--border); border-color: var(--accent); }
     .btn-accent { background: var(--accent); border-color: var(--accent); color: #fff; }
     .btn-accent:hover { background: #5a5cdb; }
+
+    /* ── Column panel ── */
+    .col-panel {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      min-width: 320px;
+      z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      display: none;
+    }
+    .col-panel.open { display: block; }
+    .col-panel-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text2);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-panel-title a {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .col-panel-title a:hover { text-decoration: underline; }
+    .col-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px 12px;
+    }
+    .col-check {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-size: 12.5px;
+      color: var(--text);
+      user-select: none;
+      padding: 3px 0;
+    }
+    .col-check:hover { color: var(--accent); }
+    .col-check input[type="checkbox"] { accent-color: var(--accent); width: 13px; height: 13px; cursor: pointer; }
 
     /* ── Stats bar ── */
     .stats-bar {
@@ -93,17 +146,16 @@
     /* ── Main layout ── */
     .main { padding: 20px 28px; }
 
-    /* ── Filters ── */
-    .filter-bar {
+    /* ── Filter bar ── */
+    .filter-section { margin-bottom: 16px; }
+    .filter-row1 {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      gap: 8px;
       align-items: center;
+      margin-bottom: 8px;
     }
-    .filter-bar input[type="text"] {
+    .filter-row1 input[type="text"] {
       flex: 1;
-      min-width: 200px;
       padding: 8px 12px;
       border-radius: 7px;
       border: 1px solid var(--border);
@@ -113,20 +165,28 @@
       outline: none;
       transition: border-color 0.15s;
     }
-    .filter-bar input[type="text"]:focus { border-color: var(--accent); }
-    .filter-bar select {
-      padding: 8px 10px;
+    .filter-row1 input[type="text"]:focus { border-color: var(--accent); }
+    .filter-count { font-size: 12px; color: var(--text2); white-space: nowrap; }
+
+    .filter-row2 {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-row2 select {
+      padding: 7px 10px;
       border-radius: 7px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
-      font-size: 13px;
+      font-size: 12.5px;
       outline: none;
       cursor: pointer;
       transition: border-color 0.15s;
+      min-width: 130px;
     }
-    .filter-bar select:focus { border-color: var(--accent); }
-    .filter-count { font-size: 12px; color: var(--text2); white-space: nowrap; }
+    .filter-row2 select:focus { border-color: var(--accent); }
+    .filter-row2 select.active { border-color: var(--accent); color: var(--accent); }
 
     /* ── Toggle sections ── */
     .section-toggle {
@@ -149,7 +209,6 @@
     /* ── Charts panel ── */
     .charts-panel { display: none; margin-bottom: 20px; }
     .charts-panel.open { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-
     .chart-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -170,9 +229,9 @@
       border: 1px solid var(--border);
     }
     table {
-      width: 100%;
       border-collapse: collapse;
       font-size: 13px;
+      white-space: nowrap;
     }
     thead th {
       background: var(--surface);
@@ -184,9 +243,10 @@
       letter-spacing: 0.5px;
       color: var(--text2);
       border-bottom: 1px solid var(--border);
-      white-space: nowrap;
       cursor: pointer;
       user-select: none;
+      position: sticky;
+      top: 0;
     }
     thead th:hover { color: var(--text); }
     thead th .sort-arrow { display: inline-block; margin-left: 4px; opacity: 0.4; }
@@ -205,8 +265,12 @@
       padding: 10px 14px;
       vertical-align: top;
       color: var(--text);
+      max-width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     td.muted { color: var(--text2); }
+    td.wide { max-width: 320px; }
 
     .tag {
       display: inline-block;
@@ -217,16 +281,19 @@
       margin: 1px 2px 1px 0;
       white-space: nowrap;
     }
-    .tag-brand { background: rgba(108,110,245,0.15); color: #a0a2f5; }
-    .tag-type { background: rgba(72,187,255,0.12); color: #72c8ff; }
-    .tag-hook { background: rgba(76,175,130,0.15); color: #6dcfa0; }
-    .tag-legacy { background: rgba(245,200,66,0.1); color: #c9a832; font-style: italic; }
-    .tag-hero { background: rgba(245,98,98,0.12); color: #f58a8a; }
+    .tag-brand  { background: rgba(108,110,245,0.15); color: #a0a2f5; }
+    .tag-type   { background: rgba(72,187,255,0.12);  color: #72c8ff; }
+    .tag-hook   { background: rgba(76,175,130,0.15);  color: #6dcfa0; }
+    .tag-legacy { background: rgba(245,200,66,0.1);   color: #c9a832; font-style: italic; }
+    .tag-hero   { background: rgba(245,98,98,0.12);   color: #f58a8a; }
+    .tag-style  { background: rgba(72,187,255,0.09);  color: #80c8e8; }
+    .tag-open   { background: rgba(108,110,245,0.09); color: #9092c8; }
 
     /* ── Expanded row ── */
     .detail-row td {
       padding: 0;
       background: var(--surface2);
+      max-width: none;
     }
     .detail-inner {
       padding: 16px 18px;
@@ -234,17 +301,14 @@
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 12px 20px;
       font-size: 12.5px;
+      white-space: normal;
     }
     .detail-field { }
     .detail-label { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 3px; }
-    .detail-value { color: var(--text); }
+    .detail-value { color: var(--text); white-space: normal; }
 
     /* ── Empty / loading ── */
-    .center-msg {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text2);
-    }
+    .center-msg { text-align: center; padding: 60px 20px; color: var(--text2); }
     .center-msg .big { font-size: 40px; margin-bottom: 10px; }
     .center-msg p { font-size: 15px; }
     .spinner {
@@ -279,6 +343,7 @@
       header { padding: 14px 16px; }
       .main { padding: 14px 16px; }
       .stats-bar { padding: 0 16px; }
+      .col-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -290,67 +355,72 @@
     <div class="last-updated" id="last-updated">Loading...</div>
   </div>
   <div class="header-right">
-    <button class="btn" id="refresh-btn" onclick="loadHistory()">↺ Refresh</button>
-    <button class="btn btn-accent" id="csv-btn" onclick="downloadCSV()">↓ CSV</button>
+    <button class="btn" id="refresh-btn" onclick="loadHistory()">&#8635; Refresh</button>
+    <button class="btn" id="col-btn" onclick="toggleColPanel()">Columns &#9662;</button>
+    <button class="btn btn-accent" id="csv-btn" onclick="downloadCSV()">&#8595; CSV</button>
+
+    <!-- Column toggle panel -->
+    <div class="col-panel" id="col-panel">
+      <div class="col-panel-title">
+        <span>Visible Columns</span>
+        <a onclick="resetColumns()">Reset to defaults</a>
+      </div>
+      <div class="col-grid" id="col-grid"></div>
+    </div>
   </div>
 </header>
 
 <div class="stats-bar" id="stats-bar" style="display:none">
   <div class="stat-item">
     <div class="stat-label">Total Videos</div>
-    <div class="stat-value" id="stat-total">—</div>
+    <div class="stat-value" id="stat-total">&#8212;</div>
   </div>
   <div class="stat-item">
     <div class="stat-label">Brands</div>
-    <div class="stat-value" id="stat-brands">—</div>
+    <div class="stat-value" id="stat-brands">&#8212;</div>
   </div>
   <div class="stat-item">
     <div class="stat-label">Video Types</div>
-    <div class="stat-value" id="stat-types">—</div>
+    <div class="stat-value" id="stat-types">&#8212;</div>
   </div>
   <div class="stat-item">
     <div class="stat-label">Products</div>
-    <div class="stat-value" id="stat-products">—</div>
+    <div class="stat-value" id="stat-products">&#8212;</div>
   </div>
 </div>
 
 <div class="main">
+
   <!-- Filter bar -->
-  <div class="filter-bar" id="filter-bar" style="display:none">
-    <input type="text" id="search" placeholder="Search all fields…" oninput="applyFilters()">
-    <select id="f-brand" onchange="applyFilters()"><option value="">All Brands</option></select>
-    <select id="f-product" onchange="applyFilters()"><option value="">All Products</option></select>
-    <select id="f-type" onchange="applyFilters()"><option value="">All Video Types</option></select>
-    <select id="f-visual-hook" onchange="applyFilters()"><option value="">All Visual Hooks</option></select>
-    <select id="f-audio-hook" onchange="applyFilters()"><option value="">All Audio Hooks</option></select>
-    <select id="f-hero" onchange="applyFilters()"><option value="">All Heroes</option></select>
-    <select id="f-voice-over" onchange="applyFilters()"><option value="">Voice Over</option></select>
-    <span class="filter-count" id="filter-count"></span>
-    <button class="btn" onclick="clearFilters()">Clear</button>
+  <div class="filter-section" id="filter-bar" style="display:none">
+    <div class="filter-row1">
+      <input type="text" id="search" placeholder="Search all fields&#8230;" oninput="applyFilters()">
+      <span class="filter-count" id="filter-count"></span>
+      <button class="btn" onclick="clearFilters()">Clear</button>
+    </div>
+    <div class="filter-row2">
+      <select id="f-brand"       onchange="applyFilters()"><option value="">All Brands</option></select>
+      <select id="f-product"     onchange="applyFilters()"><option value="">All Products</option></select>
+      <select id="f-type"        onchange="applyFilters()"><option value="">All Types</option></select>
+      <select id="f-visual-hook" onchange="applyFilters()"><option value="">All Visual Hooks</option></select>
+      <select id="f-audio-hook"  onchange="applyFilters()"><option value="">All Audio Hooks</option></select>
+      <select id="f-audio-style" onchange="applyFilters()"><option value="">All Audio Styles</option></select>
+      <select id="f-hero"        onchange="applyFilters()"><option value="">All Heroes</option></select>
+      <select id="f-voice-over"  onchange="applyFilters()"><option value="">Voice Over</option></select>
+      <select id="f-pacing"      onchange="applyFilters()"><option value="">All Pacing</option></select>
+    </div>
   </div>
 
   <!-- Charts toggle -->
   <div class="section-toggle" id="charts-toggle" style="display:none" onclick="toggleCharts()">
-    <span class="arrow">▶</span> Breakdown Charts
+    <span class="arrow">&#9654;</span> Breakdown Charts
   </div>
   <div class="charts-panel" id="charts-panel"></div>
 
   <!-- Table -->
   <div class="table-wrap" id="table-wrap" style="display:none">
     <table id="main-table">
-      <thead>
-        <tr>
-          <th onclick="sortBy('video_id')">Video ID <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('brand')">Brand <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('product')">Product <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('video_type')">Type <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('hero')">Hero <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('visual_hook')">Visual Hook <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('audio_hook')">Audio Hook <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('tone_of_voice')">Tone <span class="sort-arrow">↕</span></th>
-          <th onclick="sortBy('analyzed_at')">Analyzed <span class="sort-arrow">↕</span></th>
-        </tr>
-      </thead>
+      <thead><tr id="thead-row"></tr></thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
@@ -358,18 +428,18 @@
   <!-- Loading / empty states -->
   <div id="loading-state" class="center-msg">
     <div class="spinner"></div>
-    <p>Loading history from GitHub…</p>
+    <p>Loading history from GitHub&#8230;</p>
   </div>
   <div id="empty-state" class="center-msg" style="display:none">
-    <div class="big">📭</div>
-    <p>No videos analyzed yet.<br>Run <code>/claude-video-analysis</code> to get started.</p>
+    <div class="big">&#128267;</div>
+    <p>No videos analyzed yet.<br>Run <code>/video-analysis-tool</code> to get started.</p>
   </div>
   <div id="no-results-state" class="center-msg" style="display:none">
-    <div class="big">🔍</div>
+    <div class="big">&#128269;</div>
     <p>No videos match your filters.</p>
   </div>
   <div id="error-state" class="center-msg" style="display:none">
-    <div class="big">⚠️</div>
+    <div class="big">&#9888;&#65039;</div>
     <p id="error-msg">Could not load history.</p>
   </div>
 </div>
@@ -377,16 +447,93 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  const GITHUB_RAW = "https://raw.githubusercontent.com/shayn-wix/claude-video-tags/main/history.json";
+  const GITHUB_RAW   = "https://raw.githubusercontent.com/shayn-wix/claude-video-tags/main/history.json";
   const LOCAL_FALLBACK = "./history.json";
+  const LS_KEY       = "video-analysis-cols-v1";
+
+  // ── Column definitions ───────────────────────────────
+  const COLUMNS = [
+    { key: "video_id",          label: "Video ID",       defaultOn: true,  minWidth: "180px" },
+    { key: "brand",             label: "Brand",          defaultOn: true,  minWidth: "110px" },
+    { key: "product",           label: "Product",        defaultOn: true,  minWidth: "100px" },
+    { key: "video_type",        label: "Type",           defaultOn: true,  minWidth: "100px" },
+    { key: "hero",              label: "Hero",           defaultOn: true,  minWidth: "90px"  },
+    { key: "visual_hook",       label: "Visual Hook",    defaultOn: true,  minWidth: "130px" },
+    { key: "audio_hook",        label: "Audio Hook",     defaultOn: true,  minWidth: "130px" },
+    { key: "audio_style",       label: "Audio Style",    defaultOn: false, minWidth: "120px" },
+    { key: "voice_over",        label: "Voice Over",     defaultOn: false, minWidth: "100px" },
+    { key: "pacing",            label: "Pacing",         defaultOn: false, minWidth: "100px" },
+    { key: "key_message",       label: "Key Message",    defaultOn: true,  minWidth: "260px" },
+    { key: "hook_line",         label: "Hook Line",      defaultOn: false, minWidth: "260px" },
+    { key: "tone_of_voice",     label: "Tone",           defaultOn: true,  minWidth: "150px" },
+    { key: "call_to_action",    label: "CTA",            defaultOn: false, minWidth: "130px" },
+    { key: "main_elements",     label: "Main Elements",  defaultOn: false, minWidth: "180px" },
+    { key: "presenter_persona", label: "Persona",        defaultOn: false, minWidth: "160px" },
+    { key: "feature",           label: "Feature",        defaultOn: false, minWidth: "160px" },
+    { key: "filename",          label: "Filename",       defaultOn: false, minWidth: "180px" },
+    { key: "duration",          label: "Duration",       defaultOn: false, minWidth: "90px"  },
+    { key: "analyzed_at",       label: "Analyzed",       defaultOn: true,  minWidth: "120px" },
+  ];
 
   let allEntries = [];
-  let filtered = [];
-  let sortField = "analyzed_at";
-  let sortAsc = false;
+  let filtered   = [];
+  let sortField  = "analyzed_at";
+  let sortAsc    = false;
   let expandedId = null;
+  let visibleCols = loadColPrefs();
 
-  // ── Load ──────────────────────────────────────────────
+  // ── Column prefs ─────────────────────────────────────
+  function loadColPrefs() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(LS_KEY));
+      if (saved && Array.isArray(saved)) return new Set(saved);
+    } catch (_) {}
+    return new Set(COLUMNS.filter(c => c.defaultOn).map(c => c.key));
+  }
+  function saveColPrefs() {
+    localStorage.setItem(LS_KEY, JSON.stringify([...visibleCols]));
+  }
+  function resetColumns() {
+    visibleCols = new Set(COLUMNS.filter(c => c.defaultOn).map(c => c.key));
+    saveColPrefs();
+    buildColPanel();
+    renderHead();
+    renderTable();
+    showToast("Columns reset to defaults");
+  }
+
+  // ── Column panel ─────────────────────────────────────
+  function buildColPanel() {
+    const grid = document.getElementById("col-grid");
+    grid.innerHTML = COLUMNS.map(col => `
+      <label class="col-check">
+        <input type="checkbox" ${visibleCols.has(col.key) ? "checked" : ""}
+          onchange="toggleCol('${col.key}', this.checked)">
+        ${col.label}
+      </label>`).join("");
+  }
+
+  function toggleCol(key, checked) {
+    if (checked) visibleCols.add(key); else visibleCols.delete(key);
+    saveColPrefs();
+    renderHead();
+    renderTable();
+  }
+
+  function toggleColPanel() {
+    document.getElementById("col-panel").classList.toggle("open");
+  }
+
+  // Close column panel when clicking outside
+  document.addEventListener("click", e => {
+    const panel = document.getElementById("col-panel");
+    const btn   = document.getElementById("col-btn");
+    if (panel.classList.contains("open") && !panel.contains(e.target) && e.target !== btn) {
+      panel.classList.remove("open");
+    }
+  });
+
+  // ── Load ─────────────────────────────────────────────
   async function loadHistory() {
     show("loading-state");
     hide("empty-state"); hide("error-state"); hide("no-results-state");
@@ -398,14 +545,12 @@
       const resp = await fetch(GITHUB_RAW + "?t=" + Date.now());
       if (resp.ok) data = await resp.json();
     } catch (_) {}
-
     if (!data) {
       try {
         const resp = await fetch(LOCAL_FALLBACK);
         if (resp.ok) data = await resp.json();
       } catch (_) {}
     }
-
     if (!data) {
       hide("loading-state");
       document.getElementById("error-msg").textContent = "Could not load history from GitHub or local file.";
@@ -418,14 +563,16 @@
 
     const ts = data.last_updated
       ? new Date(data.last_updated).toLocaleString(undefined, {dateStyle:"medium", timeStyle:"short"})
-      : "—";
+      : "&#8212;";
     document.getElementById("last-updated").innerHTML = `Last updated: <b>${ts}</b>`;
 
     if (allEntries.length === 0) { show("empty-state"); return; }
 
+    buildColPanel();
     buildFilters();
     buildStats();
     buildCharts();
+    renderHead();
     applyFilters();
 
     show("stats-bar");
@@ -434,38 +581,51 @@
     show("table-wrap");
   }
 
-  // ── Filters ──────────────────────────────────────────
-  // getVisualHook: use visual_hook if present, fall back to legacy hook_strategy
-  function getVisualHook(c) {
-    return c.visual_hook || (c.hook_strategy ? c.hook_strategy + " (legacy)" : null);
+  // ── Render thead ──────────────────────────────────────
+  function renderHead() {
+    const tr = document.getElementById("thead-row");
+    tr.innerHTML = COLUMNS
+      .filter(c => visibleCols.has(c.key))
+      .map(c => {
+        const isSorted = sortField === c.key;
+        const arrow = isSorted ? (sortAsc ? "&#8593;" : "&#8595;") : "&#8597;";
+        return `<th onclick="sortBy('${c.key}')" style="min-width:${c.minWidth}" ${isSorted ? 'class="sorted"' : ''}>
+          ${c.label} <span class="sort-arrow">${arrow}</span>
+        </th>`;
+      }).join("");
   }
-  function getVisualHookRaw(c) {
-    return c.visual_hook || c.hook_strategy || null;
-  }
+
+  // ── Filters ───────────────────────────────────────────
+  function getVisualHookRaw(c) { return c.visual_hook || c.hook_strategy || null; }
 
   function buildFilters() {
     const opts = {
       brand: new Set(), product: new Set(), type: new Set(),
-      visualHook: new Set(), audioHook: new Set(), hero: new Set(), voiceOver: new Set()
+      visualHook: new Set(), audioHook: new Set(), audioStyle: new Set(),
+      hero: new Set(), voiceOver: new Set(), pacing: new Set()
     };
     allEntries.forEach(e => {
       const c = e.card || {};
-      if (c.brand) opts.brand.add(c.brand);
-      if (c.product) opts.product.add(c.product);
-      if (c.video_type) opts.type.add(c.video_type);
+      if (c.brand)       opts.brand.add(c.brand);
+      if (c.product)     opts.product.add(c.product);
+      if (c.video_type)  opts.type.add(c.video_type);
       const vh = getVisualHookRaw(c);
-      if (vh) opts.visualHook.add(vh);
-      if (c.audio_hook) opts.audioHook.add(c.audio_hook);
-      if (c.hero) opts.hero.add(c.hero);
-      if (c.voice_over) opts.voiceOver.add(c.voice_over);
+      if (vh)            opts.visualHook.add(vh);
+      if (c.audio_hook)  opts.audioHook.add(c.audio_hook);
+      if (c.audio_style) opts.audioStyle.add(c.audio_style);
+      if (c.hero)        opts.hero.add(c.hero);
+      if (c.voice_over)  opts.voiceOver.add(c.voice_over);
+      if (c.pacing)      opts.pacing.add(c.pacing);
     });
-    fillSelect("f-brand", "All Brands", opts.brand);
-    fillSelect("f-product", "All Products", opts.product);
-    fillSelect("f-type", "All Video Types", opts.type);
-    fillSelect("f-visual-hook", "All Visual Hooks", opts.visualHook);
-    fillSelect("f-audio-hook", "All Audio Hooks", opts.audioHook);
-    fillSelect("f-hero", "All Heroes", opts.hero);
-    fillSelect("f-voice-over", "Voice Over", opts.voiceOver);
+    fillSelect("f-brand",       "All Brands",        opts.brand);
+    fillSelect("f-product",     "All Products",      opts.product);
+    fillSelect("f-type",        "All Types",         opts.type);
+    fillSelect("f-visual-hook", "All Visual Hooks",  opts.visualHook);
+    fillSelect("f-audio-hook",  "All Audio Hooks",   opts.audioHook);
+    fillSelect("f-audio-style", "All Audio Styles",  opts.audioStyle);
+    fillSelect("f-hero",        "All Heroes",        opts.hero);
+    fillSelect("f-voice-over",  "Voice Over",        opts.voiceOver);
+    fillSelect("f-pacing",      "All Pacing",        opts.pacing);
   }
 
   function fillSelect(id, placeholder, values) {
@@ -475,28 +635,36 @@
   }
 
   function applyFilters() {
-    const q = document.getElementById("search").value.toLowerCase();
-    const brand = document.getElementById("f-brand").value;
-    const product = document.getElementById("f-product").value;
-    const type = document.getElementById("f-type").value;
+    const q          = document.getElementById("search").value.toLowerCase();
+    const brand      = document.getElementById("f-brand").value;
+    const product    = document.getElementById("f-product").value;
+    const type       = document.getElementById("f-type").value;
     const visualHook = document.getElementById("f-visual-hook").value;
-    const audioHook = document.getElementById("f-audio-hook").value;
-    const hero = document.getElementById("f-hero").value;
-    const voiceOver = document.getElementById("f-voice-over").value;
+    const audioHook  = document.getElementById("f-audio-hook").value;
+    const audioStyle = document.getElementById("f-audio-style").value;
+    const hero       = document.getElementById("f-hero").value;
+    const voiceOver  = document.getElementById("f-voice-over").value;
+    const pacing     = document.getElementById("f-pacing").value;
+
+    // Highlight active selects
+    ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
+     "f-audio-style","f-hero","f-voice-over","f-pacing"].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.toggle("active", !!el.value);
+    });
 
     filtered = allEntries.filter(e => {
       const c = e.card || {};
-      if (brand && c.brand !== brand) return false;
-      if (product && c.product !== product) return false;
-      if (type && c.video_type !== type) return false;
+      if (brand      && c.brand      !== brand)            return false;
+      if (product    && c.product    !== product)          return false;
+      if (type       && c.video_type !== type)             return false;
       if (visualHook && getVisualHookRaw(c) !== visualHook) return false;
-      if (audioHook && c.audio_hook !== audioHook) return false;
-      if (hero && c.hero !== hero) return false;
-      if (voiceOver && c.voice_over !== voiceOver) return false;
-      if (q) {
-        const haystack = JSON.stringify(e).toLowerCase();
-        if (!haystack.includes(q)) return false;
-      }
+      if (audioHook  && c.audio_hook !== audioHook)        return false;
+      if (audioStyle && c.audio_style !== audioStyle)      return false;
+      if (hero       && c.hero       !== hero)             return false;
+      if (voiceOver  && c.voice_over !== voiceOver)        return false;
+      if (pacing     && c.pacing     !== pacing)           return false;
+      if (q) { if (!JSON.stringify(e).toLowerCase().includes(q)) return false; }
       return true;
     });
 
@@ -504,19 +672,17 @@
     renderTable();
     document.getElementById("filter-count").textContent =
       filtered.length === allEntries.length
-        ? `${allEntries.length} videos`
-        : `${filtered.length} of ${allEntries.length} videos`;
+        ? `${allEntries.length} video${allEntries.length !== 1 ? "s" : ""}`
+        : `${filtered.length} of ${allEntries.length}`;
   }
 
   function clearFilters() {
     document.getElementById("search").value = "";
-    document.getElementById("f-brand").value = "";
-    document.getElementById("f-product").value = "";
-    document.getElementById("f-type").value = "";
-    document.getElementById("f-visual-hook").value = "";
-    document.getElementById("f-audio-hook").value = "";
-    document.getElementById("f-hero").value = "";
-    document.getElementById("f-voice-over").value = "";
+    ["f-brand","f-product","f-type","f-visual-hook","f-audio-hook",
+     "f-audio-style","f-hero","f-voice-over","f-pacing"].forEach(id => {
+      document.getElementById(id).value = "";
+      document.getElementById(id).classList.remove("active");
+    });
     applyFilters();
   }
 
@@ -524,47 +690,40 @@
   function sortBy(field) {
     if (sortField === field) { sortAsc = !sortAsc; }
     else { sortField = field; sortAsc = true; }
-    document.querySelectorAll("thead th").forEach(th => {
-      th.classList.remove("sorted");
-      if (th.querySelector(".sort-arrow")) th.querySelector(".sort-arrow").textContent = "↕";
-    });
-    const colFields = ["video_id","brand","product","video_type","hero","visual_hook","audio_hook","tone_of_voice","analyzed_at"];
-    const idx = colFields.indexOf(field);
-    if (idx >= 0) {
-      const th = document.querySelectorAll("thead th")[idx];
-      th.classList.add("sorted");
-      th.querySelector(".sort-arrow").textContent = sortAsc ? "↑" : "↓";
-    }
+    renderHead();
     sortEntries();
     renderTable();
   }
 
   function sortEntries() {
     filtered.sort((a, b) => {
-      const av = getField(a, sortField) || "";
-      const bv = getField(b, sortField) || "";
+      const av = getFieldVal(a, sortField) || "";
+      const bv = getFieldVal(b, sortField) || "";
       return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
     });
   }
 
-  function getField(entry, field) {
-    if (field === "analyzed_at") return entry.analyzed_at || "";
-    if (field === "visual_hook") return getVisualHookRaw(entry.card || "") || "";
-    return String((entry.card || {})[field] || "");
+  function getFieldVal(entry, key) {
+    if (key === "analyzed_at") return entry.analyzed_at || "";
+    if (key === "filename")    return entry.filename || "";
+    if (key === "duration")    return String(entry.fingerprint?.duration_seconds || "");
+    if (key === "visual_hook") return getVisualHookRaw(entry.card || {}) || "";
+    const v = (entry.card || {})[key];
+    return Array.isArray(v) ? v.join(", ") : String(v || "");
   }
 
   // ── Stats ──────────────────────────────────────────────
   function buildStats() {
-    const brands = new Set(allEntries.map(e => e.card?.brand).filter(Boolean));
-    const types = new Set(allEntries.map(e => e.card?.video_type).filter(Boolean));
+    const brands   = new Set(allEntries.map(e => e.card?.brand).filter(Boolean));
+    const types    = new Set(allEntries.map(e => e.card?.video_type).filter(Boolean));
     const products = new Set(allEntries.map(e => e.card?.product).filter(Boolean));
-    document.getElementById("stat-total").textContent = allEntries.length;
-    document.getElementById("stat-brands").textContent = brands.size;
-    document.getElementById("stat-types").textContent = types.size;
+    document.getElementById("stat-total").textContent    = allEntries.length;
+    document.getElementById("stat-brands").textContent   = brands.size;
+    document.getElementById("stat-types").textContent    = types.size;
     document.getElementById("stat-products").textContent = products.size;
   }
 
-  // ── Charts ──────────────────────────────────────────────
+  // ── Charts ────────────────────────────────────────────
   function buildCharts() {
     const fields = [
       { key: "brand", label: "Brand" },
@@ -572,22 +731,21 @@
       { key: "product", label: "Product" },
       { key: "visual_hook", label: "Visual Hook" },
       { key: "audio_hook", label: "Audio Hook" },
+      { key: "audio_style", label: "Audio Style" },
       { key: "hero", label: "Hero" },
       { key: "voice_over", label: "Voice Over" },
+      { key: "pacing", label: "Pacing" },
     ];
-    const panel = document.getElementById("charts-panel");
-    panel.innerHTML = fields.map(f => buildChart(f.key, f.label)).join("");
+    document.getElementById("charts-panel").innerHTML =
+      fields.map(f => buildChart(f.key, f.label)).join("");
   }
 
   function buildChart(field, label) {
     const counts = {};
     allEntries.forEach(e => {
-      let v;
-      if (field === "visual_hook") {
-        v = getVisualHookRaw(e.card || {}) || "unknown";
-      } else {
-        v = (e.card || {})[field] || "unknown";
-      }
+      const v = field === "visual_hook"
+        ? (getVisualHookRaw(e.card || {}) || "unknown")
+        : ((e.card || {})[field] || "unknown");
       counts[v] = (counts[v] || 0) + 1;
     });
     const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
@@ -602,13 +760,57 @@
   }
 
   function toggleCharts() {
-    const toggle = document.getElementById("charts-toggle");
-    const panel = document.getElementById("charts-panel");
-    toggle.classList.toggle("open");
-    panel.classList.toggle("open");
+    document.getElementById("charts-toggle").classList.toggle("open");
+    document.getElementById("charts-panel").classList.toggle("open");
   }
 
-  // ── Table ──────────────────────────────────────────────
+  // ── Table render ──────────────────────────────────────
+  function cellValue(entry, key) {
+    const c = entry.card || {};
+    if (key === "video_id")   return { html: esc(c.video_id || entry.filename || "&#8212;"), cls: "" };
+    if (key === "brand")      return { html: c.brand ? `<span class="tag tag-brand">${esc(c.brand)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    if (key === "product")    return { html: esc(c.product || "&#8212;"), cls: "muted" };
+    if (key === "video_type") return { html: c.video_type ? `<span class="tag tag-type">${esc(c.video_type)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    if (key === "hero")       return { html: c.hero ? `<span class="tag tag-hero">${esc(c.hero)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    if (key === "visual_hook") {
+      const vhv = c.visual_hook;
+      const leg = !c.visual_hook && c.hook_strategy ? c.hook_strategy : null;
+      return { html: vhv ? `<span class="tag tag-hook">${esc(vhv)}</span>` : leg ? `<span class="tag tag-legacy">${esc(leg)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    }
+    if (key === "audio_hook")  return { html: c.audio_hook ? `<span class="tag tag-hook">${esc(c.audio_hook)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    if (key === "audio_style") return { html: c.audio_style ? `<span class="tag tag-style">${esc(c.audio_style)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
+    if (key === "voice_over")  return { html: esc(c.voice_over || "&#8212;"), cls: "muted" };
+    if (key === "pacing")      return { html: esc(c.pacing || "&#8212;"), cls: "muted" };
+    if (key === "key_message") return { html: esc(c.key_message || "&#8212;"), cls: "wide" };
+    if (key === "hook_line")   return { html: esc(c.hook_line || "&#8212;"), cls: "wide" };
+    if (key === "tone_of_voice") return { html: esc(c.tone_of_voice || "&#8212;"), cls: "muted" };
+    if (key === "call_to_action") {
+      const v = Array.isArray(c.call_to_action) ? c.call_to_action.join(", ") : (c.call_to_action || "");
+      return { html: esc(v || "&#8212;"), cls: "muted" };
+    }
+    if (key === "main_elements") {
+      const v = Array.isArray(c.main_elements) ? c.main_elements.join(", ") : (c.main_elements || "");
+      return { html: esc(v || "&#8212;"), cls: "muted" };
+    }
+    if (key === "presenter_persona") {
+      const v = Array.isArray(c.presenter_persona) ? c.presenter_persona.join(", ") : (c.presenter_persona || "");
+      return { html: esc(v || "&#8212;"), cls: "muted" };
+    }
+    if (key === "feature") {
+      const v = Array.isArray(c.feature) ? c.feature.join(", ") : (c.feature || "");
+      return { html: esc(v || "&#8212;"), cls: "muted" };
+    }
+    if (key === "filename")   return { html: esc(entry.filename || "&#8212;"), cls: "muted" };
+    if (key === "duration")   return { html: entry.fingerprint?.duration_seconds ? esc(entry.fingerprint.duration_seconds + "s") : "&#8212;", cls: "muted" };
+    if (key === "analyzed_at") {
+      const date = entry.analyzed_at
+        ? new Date(entry.analyzed_at).toLocaleDateString(undefined, {month:"short", day:"numeric", year:"numeric"})
+        : "&#8212;";
+      return { html: date, cls: "muted" };
+    }
+    return { html: "&#8212;", cls: "muted" };
+  }
+
   function renderTable() {
     const tbody = document.getElementById("table-body");
     if (filtered.length === 0) {
@@ -620,71 +822,42 @@
     hide("no-results-state");
     show("table-wrap");
 
+    const visCols = COLUMNS.filter(c => visibleCols.has(c.key));
+    const colSpan = visCols.length;
+
     tbody.innerHTML = filtered.map(e => {
-      const c = e.card || {};
-      const features = (Array.isArray(c.feature) ? c.feature : [c.feature]).filter(Boolean).slice(0, 3);
-      const date = e.analyzed_at ? new Date(e.analyzed_at).toLocaleDateString(undefined, {month:"short", day:"numeric", year:"numeric"}) : "—";
       const isExpanded = expandedId === e.id;
+      const cells = visCols.map(col => {
+        const { html, cls } = cellValue(e, col.key);
+        return `<td class="${cls}">${html}</td>`;
+      }).join("");
 
-      // Visual hook: prefer visual_hook, fall back to hook_strategy with legacy badge
-      const vhValue = c.visual_hook || null;
-      const legacyHook = !c.visual_hook && c.hook_strategy ? c.hook_strategy : null;
-      const vhCell = vhValue
-        ? `<span class="tag tag-hook">${esc(vhValue)}</span>`
-        : (legacyHook ? `<span class="tag tag-legacy">${esc(legacyHook)}</span>` : `<span class="muted">—</span>`);
-
-      const ahCell = c.audio_hook
-        ? `<span class="tag tag-hook">${esc(c.audio_hook)}</span>`
-        : `<span class="muted">—</span>`;
-
-      const heroCell = c.hero
-        ? `<span class="tag tag-hero">${esc(c.hero)}</span>`
-        : `<span class="muted">—</span>`;
-
-      let rows = `<tr onclick="toggleRow('${esc(e.id)}')" ${isExpanded ? 'class="expanded"' : ''}>
-        <td>${esc(c.video_id || e.filename || "—")}</td>
-        <td><span class="tag tag-brand">${esc(c.brand || "—")}</span></td>
-        <td class="muted">${esc(c.product || "—")}</td>
-        <td><span class="tag tag-type">${esc(c.video_type || "—")}</span></td>
-        <td>${heroCell}</td>
-        <td>${vhCell}</td>
-        <td>${ahCell}</td>
-        <td class="muted">${esc(c.tone_of_voice || "—")}</td>
-        <td class="muted">${date}</td>
-      </tr>`;
+      let rows = `<tr onclick="toggleRow('${esc(e.id)}')" ${isExpanded ? 'class="expanded"' : ''}>${cells}</tr>`;
 
       if (isExpanded) {
-        rows += `<tr class="detail-row" id="detail-${esc(e.id)}">
-          <td colspan="9">
-            <div class="detail-inner">
-              ${detailField("Key Message", c.key_message)}
-              ${detailField("Tone of Voice", c.tone_of_voice)}
-              ${detailField("Audio Style", c.audio_style)}
-              ${detailField("Voice Over", c.voice_over)}
-              ${detailField("Pacing", c.pacing)}
-              ${detailField("Hook Line", c.hook_line)}
-              ${detailField("Call to Action", Array.isArray(c.call_to_action) ? c.call_to_action.join(", ") : c.call_to_action)}
-              ${detailField("Main Elements", Array.isArray(c.main_elements) ? c.main_elements.join(", ") : c.main_elements)}
-              ${detailField("Presenter Persona", Array.isArray(c.presenter_persona) ? c.presenter_persona.join(", ") : c.presenter_persona)}
-              ${detailField("All Features", Array.isArray(c.feature) ? c.feature.join(", ") : c.feature)}
-              ${c.hook_strategy && !c.visual_hook ? detailField("Hook Strategy (legacy)", c.hook_strategy) : ""}
-              ${detailField("File", e.filename)}
-              ${detailField("Duration", e.fingerprint?.duration_seconds ? e.fingerprint.duration_seconds + "s" : "—")}
-              ${detailField("Analyzed On", e.analyzed_at ? new Date(e.analyzed_at).toLocaleString() : "—")}
-            </div>
-          </td>
-        </tr>`;
+        // Show only fields NOT currently visible as columns
+        const hiddenCols = COLUMNS.filter(c => !visibleCols.has(c.key));
+        const detailFields = hiddenCols.map(col => {
+          const raw = getFieldVal(e, col.key);
+          if (!raw || raw === "undefined") return "";
+          return `<div class="detail-field">
+            <div class="detail-label">${esc(col.label)}</div>
+            <div class="detail-value">${esc(raw)}</div>
+          </div>`;
+        }).join("");
+
+        // Always show file + analyzed_at in detail if not already a column
+        const extra = [];
+        if (!visibleCols.has("filename") && e.filename) {
+          extra.push(`<div class="detail-field"><div class="detail-label">File</div><div class="detail-value">${esc(e.filename)}</div></div>`);
+        }
+
+        rows += `<tr class="detail-row"><td colspan="${colSpan}">
+          <div class="detail-inner">${detailFields}${extra.join("")}</div>
+        </td></tr>`;
       }
       return rows;
     }).join("");
-  }
-
-  function detailField(label, value) {
-    if (!value) return "";
-    return `<div class="detail-field">
-      <div class="detail-label">${esc(label)}</div>
-      <div class="detail-value">${esc(String(value))}</div>
-    </div>`;
   }
 
   function toggleRow(id) {
@@ -692,24 +865,24 @@
     renderTable();
   }
 
-  // ── CSV ──────────────────────────────────────────────
+  // ── CSV (all 20 fields always) ────────────────────────
   function downloadCSV() {
     const cols = ["video_id","brand","product","hero","video_type","feature","main_elements",
-                  "presenter_persona","key_message","tone_of_voice",
-                  "visual_hook","audio_hook","audio_style","voice_over","pacing","hook_line",
-                  "call_to_action","filename","duration_seconds","analyzed_at"];
+                  "presenter_persona","key_message","tone_of_voice","visual_hook","audio_hook",
+                  "audio_style","voice_over","pacing","hook_line","call_to_action",
+                  "filename","duration_seconds","analyzed_at"];
     const rows = [cols.join(",")];
     filtered.forEach(e => {
       const c = e.card || {};
       rows.push(cols.map(col => {
         let v;
-        if (col === "filename") v = e.filename;
+        if (col === "filename")         v = e.filename;
         else if (col === "duration_seconds") v = e.fingerprint?.duration_seconds;
         else if (col === "analyzed_at") v = e.analyzed_at;
-        else if (col === "visual_hook") v = c.visual_hook || c.hook_strategy;  // legacy fallback
+        else if (col === "visual_hook") v = c.visual_hook || c.hook_strategy;
         else v = c[col];
         if (Array.isArray(v)) v = v.join("; ");
-        v = String(v || "");
+        v = String(v ?? "");
         if (v.includes(",") || v.includes('"') || v.includes("\n")) v = '"' + v.replace(/"/g,'""') + '"';
         return v;
       }).join(","));
@@ -722,11 +895,13 @@
     showToast("CSV downloaded");
   }
 
-  // ── Helpers ──────────────────────────────────────────
+  // ── Helpers ───────────────────────────────────────────
   function show(id) { document.getElementById(id).style.display = ""; }
   function hide(id) { document.getElementById(id).style.display = "none"; }
   function esc(str) {
-    return String(str || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    return String(str ?? "")
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   }
   function showToast(msg) {
     const t = document.getElementById("toast");
