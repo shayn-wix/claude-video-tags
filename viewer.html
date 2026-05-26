@@ -490,6 +490,7 @@
     { id: "audio-style", label: "Audio Style",   field: "audio_style",       mv: false },
     { id: "hero",        label: "Hero",          field: "hero",              mv: false },
     { id: "voice-over",  label: "Voice Over",    field: "voice_over",        mv: false },
+    { id: "language",    label: "Language",      field: "language",          mv: false },
     { id: "pacing",      label: "Pacing",        field: "pacing",            mv: false },
     { id: "tone",        label: "Tone",          field: "tone_of_voice",     mv: false },
     { id: "cta",         label: "CTA",           field: "call_to_action",    mv: true  },
@@ -511,6 +512,7 @@
     { key: "audio_hook",        label: "Audio Hook",     defaultOn: true,  minWidth: "130px" },
     { key: "audio_style",       label: "Audio Style",    defaultOn: false, minWidth: "120px" },
     { key: "voice_over",        label: "Voice Over",     defaultOn: false, minWidth: "100px" },
+    { key: "language",          label: "Language",       defaultOn: false, minWidth: "100px" },
     { key: "pacing",            label: "Pacing",         defaultOn: false, minWidth: "100px" },
     { key: "key_message",       label: "Key Message",    defaultOn: true,  minWidth: "260px" },
     { key: "hook_line",         label: "Hook Line",      defaultOn: false, minWidth: "260px" },
@@ -841,6 +843,7 @@
     if (key === "audio_hook")  return { html: c.audio_hook ? `<span class="tag tag-hook">${esc(c.audio_hook)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
     if (key === "audio_style") return { html: c.audio_style ? `<span class="tag tag-style">${esc(c.audio_style)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
     if (key === "voice_over")  return { html: esc(c.voice_over || "&#8212;"), cls: "muted" };
+    if (key === "language")    return { html: esc(c.language || "&#8212;"), cls: "muted" };
     if (key === "pacing")      return { html: esc(c.pacing || "&#8212;"), cls: "muted" };
     if (key === "key_message") return { html: c.key_message ? `<div class="cell-text">${esc(c.key_message)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
     if (key === "hook_line") return { html: c.hook_line ? `<div class="cell-text">${esc(c.hook_line)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
@@ -918,7 +921,7 @@
   function downloadCSV() {
     const cols = ["video_id","brand","product","hero","video_type","feature","main_elements",
                   "presenter_persona","key_message","tone_of_voice","visual_hook","audio_hook",
-                  "audio_style","voice_over","pacing","hook_line","call_to_action",
+                  "audio_style","voice_over","language","pacing","hook_line","call_to_action",
                   "filename","duration_seconds","analyzed_at"];
     const rows = [cols.join(",")];
     filtered.forEach(e => {
