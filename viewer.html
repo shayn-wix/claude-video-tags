@@ -384,6 +384,19 @@
       .stats-bar { padding: 0 16px; }
       .col-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ── Duration range filter ── */
+    .filter-row3 { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .dur-label { font-size: 12.5px; color: var(--text2); white-space: nowrap; }
+    .filter-row3 input[type="number"] {
+      width: 72px; padding: 7px 10px; border-radius: 7px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-size: 12.5px; outline: none;
+      -moz-appearance: textfield;
+    }
+    .filter-row3 input[type="number"]::-webkit-inner-spin-button,
+    .filter-row3 input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+    .filter-row3 input[type="number"]:focus { border-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -438,6 +451,13 @@
       <button class="btn" onclick="clearFilters()">Clear</button>
     </div>
     <div class="filter-row2" id="filter-row2"></div>
+    <div class="filter-row3">
+      <span class="dur-label">Duration:</span>
+      <input type="number" id="dur-min" placeholder="min" min="0" step="1" oninput="applyFilters()">
+      <span class="dur-label">&#8211;</span>
+      <input type="number" id="dur-max" placeholder="max" min="0" step="1" oninput="applyFilters()">
+      <span class="dur-label">sec</span>
+    </div>
   </div>
 
   <!-- Charts toggle -->
@@ -491,8 +511,9 @@
     { id: "hero",        label: "Hero",          field: "hero",              mv: false },
     { id: "voice-over",  label: "Voice Over",    field: "voice_over",        mv: false },
     { id: "language",    label: "Language",      field: "language",          mv: false },
+    { id: "size",        label: "Size",          field: "size",              mv: false },
     { id: "pacing",      label: "Pacing",        field: "pacing",            mv: false },
-    { id: "tone",        label: "Tone",          field: "tone_of_voice",     mv: false },
+    { id: "tone",        label: "Tone",          field: "tone_of_voice",     mv: true  },
     { id: "cta",         label: "CTA",           field: "call_to_action",    mv: true  },
     { id: "feature",     label: "Feature",       field: "feature",           mv: true  },
     { id: "persona",     label: "Persona",       field: "presenter_persona", mv: true  },
@@ -503,7 +524,7 @@
 
   // ── Column definitions ───────────────────────────────
   const COLUMNS = [
-    { key: "video_id",          label: "Video ID",       defaultOn: true,  minWidth: "180px" },
+    { key: "video_id",          label: "Video ID",       defaultOn: true,  minWidth: "220px" },
     { key: "brand",             label: "Brand",          defaultOn: true,  minWidth: "110px" },
     { key: "product",           label: "Product",        defaultOn: true,  minWidth: "100px" },
     { key: "video_type",        label: "Type",           defaultOn: true,  minWidth: "100px" },
@@ -513,6 +534,7 @@
     { key: "audio_style",       label: "Audio Style",    defaultOn: false, minWidth: "120px" },
     { key: "voice_over",        label: "Voice Over",     defaultOn: false, minWidth: "100px" },
     { key: "language",          label: "Language",       defaultOn: false, minWidth: "100px" },
+    { key: "size",              label: "Size",           defaultOn: false, minWidth: "120px" },
     { key: "pacing",            label: "Pacing",         defaultOn: false, minWidth: "100px" },
     { key: "key_message",       label: "Key Message",    defaultOn: true,  minWidth: "260px" },
     { key: "hook_line",         label: "Hook Line",      defaultOn: false, minWidth: "260px" },
@@ -727,6 +749,11 @@
           if (!sel.has(String(raw || ""))) return false;
         }
       }
+      const durMin = parseFloat(document.getElementById("dur-min").value);
+      const durMax = parseFloat(document.getElementById("dur-max").value);
+      const dur = e.fingerprint?.duration_seconds || 0;
+      if (!isNaN(durMin) && durMin > 0 && dur < durMin) return false;
+      if (!isNaN(durMax) && durMax > 0 && dur > durMax) return false;
       if (q && !JSON.stringify(e).toLowerCase().includes(q)) return false;
       return true;
     });
@@ -746,6 +773,8 @@
       document.querySelectorAll("#ms-panel-" + f.id + " input[type=\"checkbox\"]")
         .forEach(cb => { cb.checked = false; });
     });
+    document.getElementById("dur-min").value = "";
+    document.getElementById("dur-max").value = "";
     applyFilters();
   }
 
@@ -830,7 +859,7 @@
   // ── Table render ──────────────────────────────────────
   function cellValue(entry, key) {
     const c = entry.card || {};
-    if (key === "video_id")   return { html: esc(c.video_id || entry.filename || "&#8212;"), cls: "" };
+    if (key === "video_id")   return { html: esc(c.video_id || entry.filename || "&#8212;"), cls: "scroll-cell" };
     if (key === "brand")      return { html: c.brand ? `<span class="tag tag-brand">${esc(c.brand)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
     if (key === "product")    return { html: esc(c.product || "&#8212;"), cls: "muted" };
     if (key === "video_type") return { html: c.video_type ? `<span class="tag tag-type">${esc(c.video_type)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
@@ -844,10 +873,11 @@
     if (key === "audio_style") return { html: c.audio_style ? `<span class="tag tag-style">${esc(c.audio_style)}</span>` : "<span class='muted'>&#8212;</span>", cls: "" };
     if (key === "voice_over")  return { html: esc(c.voice_over || "&#8212;"), cls: "muted" };
     if (key === "language")    return { html: esc(c.language || "&#8212;"), cls: "muted" };
+    if (key === "size")        return { html: esc(c.size || "&#8212;"), cls: "muted" };
     if (key === "pacing")      return { html: esc(c.pacing || "&#8212;"), cls: "muted" };
     if (key === "key_message") return { html: c.key_message ? `<div class="cell-text">${esc(c.key_message)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
     if (key === "hook_line") return { html: c.hook_line ? `<div class="cell-text">${esc(c.hook_line)}</div>` : "<span class='muted'>&#8212;</span>", cls: "scroll-cell wide" };
-    if (key === "tone_of_voice") return { html: esc(c.tone_of_voice || "&#8212;"), cls: "muted" };
+    if (key === "tone_of_voice") return { html: renderTagList(c.tone_of_voice), cls: "tag-cell" };
     if (key === "call_to_action") return { html: renderTagList(c.call_to_action), cls: "tag-cell" };
     if (key === "main_elements") return { html: renderTagList(c.main_elements), cls: "tag-cell" };
     if (key === "presenter_persona") return { html: renderTagList(c.presenter_persona), cls: "tag-cell" };
@@ -921,7 +951,7 @@
   function downloadCSV() {
     const cols = ["video_id","brand","product","hero","video_type","feature","main_elements",
                   "presenter_persona","key_message","tone_of_voice","visual_hook","audio_hook",
-                  "audio_style","voice_over","language","pacing","hook_line","call_to_action",
+                  "audio_style","voice_over","language","size","pacing","hook_line","call_to_action",
                   "filename","duration_seconds","analyzed_at"];
     const rows = [cols.join(",")];
     filtered.forEach(e => {
