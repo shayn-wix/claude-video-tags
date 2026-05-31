@@ -5,7 +5,8 @@
     "course monetization",
     "flip animation",
     "animations & effects",
-    "domain registration"
+    "domain registration",
+    "AI site generation"
   ],
   "main_elements": [
     "talking head",
@@ -16,14 +17,16 @@
     "split-screen composite",
     "bold text overlay",
     "animation effects demo",
-    "product UI demo"
+    "product UI demo",
+    "AI-generated content"
   ],
   "presenter_persona": [
     "agency owner",
     "female entrepreneur",
     "success story",
     "web designer persona",
-    "everyday entrepreneur"
+    "everyday entrepreneur",
+    "comedic presenter"
   ],
   "call_to_action": [
     "no explicit CTA",
@@ -32,14 +35,16 @@
   "key_message": [
     "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
     "Wix Studio's built-in animation tools elevate website design and wow clients",
-    "Claim your domain name before someone else does \u2014 Wix makes it fast and affordable"
+    "Claim your domain name before someone else does \u2014 Wix makes it fast and affordable",
+    "Wix Harmony builds any website you can imagine from a single text prompt"
   ],
   "tone_of_voice": [
     "Aspirational & Results-Driven",
     "Playful & Bold",
     "Relatable & Playful",
     "Confident & Intriguing",
-    "Urgent & Relatable"
+    "Urgent & Relatable",
+    "Comedic & Over-the-Top"
   ],
   "hook_line": [
     "This one shift took our website builds to the next level and cut production time in half.",
@@ -48,6 +53,7 @@
     "\u26a0\ufe0f Warning: Wix Studio will make you flip",
     "Wix Studio makes me add motion I didn't even plan for",
     "This feature will have your clients flipping",
-    "That feeling when you see your idea become a dot com, it changes everything."
+    "That feeling when you see your idea become a dot com, it changes everything.",
+    "I've got an idea for a business online"
   ]
 }
