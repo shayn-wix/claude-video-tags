@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-24T17:52:01Z",
+  "last_updated": "2026-05-31T07:44:24Z",
   "entries": [
     {
       "id": "3d42eb13",
@@ -247,6 +247,123 @@
         "hook_line": "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status.",
         "call_to_action": "no explicit CTA",
         "note": "alternate crop of H3"
+      }
+    },
+    {
+      "id": "49f0b348",
+      "filename": "Flip It_Bold_Eye Catching_4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 19998994,
+        "duration_seconds": 17.4
+      },
+      "analyzed_at": "2026-05-31T07:44:24Z",
+      "card": {
+        "video_id": "Flip It \u2014 Bold Warning Hook (4:5)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "motion",
+        "feature": [
+          "flip animation",
+          "animations & effects"
+        ],
+        "hero": "both",
+        "main_elements": [
+          "split-screen composite",
+          "screen recording",
+          "bold text overlay",
+          "animation effects demo"
+        ],
+        "presenter_persona": [
+          "web designer persona"
+        ],
+        "key_message": "Wix Studio's built-in animation tools elevate website design and wow clients",
+        "tone_of_voice": "Playful & Bold",
+        "visual_hook": "bold text",
+        "audio_hook": "no speech",
+        "audio_style": "music only",
+        "voice_over": "no",
+        "language": "no speech",
+        "pacing": "fast-cut",
+        "hook_line": "\u26a0\ufe0f Warning: Wix Studio will make you flip",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "9dfd0e23",
+      "filename": "Flip it_ Relatable_4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 19992927,
+        "duration_seconds": 17.4
+      },
+      "analyzed_at": "2026-05-31T07:44:24Z",
+      "card": {
+        "video_id": "Flip It \u2014 Relatable Hook (4:5)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "motion",
+        "feature": [
+          "flip animation",
+          "animations & effects"
+        ],
+        "hero": "both",
+        "main_elements": [
+          "split-screen composite",
+          "screen recording",
+          "bold text overlay",
+          "animation effects demo"
+        ],
+        "presenter_persona": [
+          "web designer persona"
+        ],
+        "key_message": "Wix Studio's built-in animation tools elevate website design and wow clients",
+        "tone_of_voice": "Relatable & Playful",
+        "visual_hook": "bold text",
+        "audio_hook": "no speech",
+        "audio_style": "music only",
+        "voice_over": "no",
+        "language": "no speech",
+        "pacing": "fast-cut",
+        "hook_line": "Wix Studio makes me add motion I didn't even plan for",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "ebf1200e",
+      "filename": "Flip it_Intriguing_4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 19999980,
+        "duration_seconds": 17.4
+      },
+      "analyzed_at": "2026-05-31T07:44:24Z",
+      "card": {
+        "video_id": "Flip It \u2014 Intriguing Hook (4:5)",
+        "brand": "wix studio",
+        "product": "builder",
+        "video_type": "motion",
+        "feature": [
+          "flip animation",
+          "animations & effects"
+        ],
+        "hero": "both",
+        "main_elements": [
+          "split-screen composite",
+          "screen recording",
+          "bold text overlay",
+          "animation effects demo"
+        ],
+        "presenter_persona": [
+          "web designer persona"
+        ],
+        "key_message": "Wix Studio's built-in animation tools elevate website design and wow clients",
+        "tone_of_voice": "Confident & Intriguing",
+        "visual_hook": "bold text",
+        "audio_hook": "no speech",
+        "audio_style": "music only",
+        "voice_over": "no",
+        "language": "no speech",
+        "pacing": "fast-cut",
+        "hook_line": "This feature will have your clients flipping",
+        "call_to_action": "no explicit CTA"
       }
     }
   ]
