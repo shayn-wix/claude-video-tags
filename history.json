@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-31T07:44:24Z",
+  "last_updated": "2026-05-31T08:42:38Z",
   "entries": [
     {
       "id": "3d42eb13",
@@ -364,6 +364,44 @@
         "pacing": "fast-cut",
         "hook_line": "This feature will have your clients flipping",
         "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "7f915688",
+      "filename": "Best of AI _ V1 - 4-5.mp4",
+      "fingerprint": {
+        "size_bytes": 460646221,
+        "duration_seconds": 48.8
+      },
+      "analyzed_at": "2026-05-31T08:42:37Z",
+      "card": {
+        "video_id": "Best of AI \u2014 Domain FOMO Story (4:5)",
+        "brand": "wix",
+        "product": "domain",
+        "video_type": "UGC",
+        "feature": [
+          "domain registration"
+        ],
+        "hero": "man",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "animated text captions",
+          "product UI demo"
+        ],
+        "presenter_persona": [
+          "everyday entrepreneur"
+        ],
+        "key_message": "Claim your domain name before someone else does \u2014 Wix makes it fast and affordable",
+        "tone_of_voice": "Urgent & Relatable",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "That feeling when you see your idea become a dot com, it changes everything.",
+        "call_to_action": "search your domain on Wix"
       }
     }
   ]
