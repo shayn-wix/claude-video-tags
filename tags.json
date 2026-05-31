@@ -2,32 +2,45 @@
   "feature": [
     "wireframe library",
     "agency scalability",
-    "course monetization"
+    "course monetization",
+    "flip animation",
+    "animations & effects"
   ],
   "main_elements": [
     "talking head",
     "screen recording",
     "client website showcase",
     "animated text captions",
-    "mobile mockup"
+    "mobile mockup",
+    "split-screen composite",
+    "bold text overlay",
+    "animation effects demo"
   ],
   "presenter_persona": [
     "agency owner",
     "female entrepreneur",
-    "success story"
+    "success story",
+    "web designer persona"
   ],
   "call_to_action": [
     "no explicit CTA"
   ],
   "key_message": [
-    "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library"
+    "Wix Studio doubled my agency revenue by cutting build time in half with a wireframe library",
+    "Wix Studio's built-in animation tools elevate website design and wow clients"
   ],
   "tone_of_voice": [
-    "Aspirational & Results-Driven"
+    "Aspirational & Results-Driven",
+    "Playful & Bold",
+    "Relatable & Playful",
+    "Confident & Intriguing"
   ],
   "hook_line": [
     "This one shift took our website builds to the next level and cut production time in half.",
     "This one shift led to an additional $29,000 in revenue in just one year.",
-    "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status."
+    "This is how we doubled our revenue in just one year and reached a multi-six-figure agency status.",
+    "\u26a0\ufe0f Warning: Wix Studio will make you flip",
+    "Wix Studio makes me add motion I didn't even plan for",
+    "This feature will have your clients flipping"
   ]
 }
