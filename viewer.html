@@ -168,25 +168,45 @@
     .filter-row1 input[type="text"]:focus { border-color: var(--accent); }
     .filter-count { font-size: 12px; color: var(--text2); white-space: nowrap; }
 
-    .filter-row2 {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+    /* ── Filter toggle + panel ── */
+    .filter-toggle-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 12px; border-radius: 7px;
+      border: 1px solid var(--border); background: var(--surface2);
+      color: var(--text); font-size: 13px; cursor: pointer;
+      transition: background 0.15s, border-color 0.15s; white-space: nowrap;
     }
-    .filter-row2 select {
-      padding: 7px 10px;
-      border-radius: 7px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: 12.5px;
-      outline: none;
-      cursor: pointer;
-      transition: border-color 0.15s;
-      min-width: 130px;
+    .filter-toggle-btn:hover { border-color: var(--accent); }
+    .filter-toggle-btn.active { border-color: var(--accent); color: var(--accent); }
+    .filter-badge {
+      background: var(--accent); color: #fff;
+      border-radius: 10px; padding: 1px 6px; font-size: 11px; font-weight: 700;
     }
-    .filter-row2 select:focus { border-color: var(--accent); }
-    .filter-row2 select.active { border-color: var(--accent); color: var(--accent); }
+    .filter-panel-body { display: none; margin-top: 10px; }
+    .filter-panel-body.open {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px;
+    }
+    .filter-group-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: var(--text2); margin-bottom: 8px;
+    }
+    .filter-group-items { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
+
+    /* ── Active filter chips ── */
+    .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .filter-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(108,110,245,0.15); border: 1px solid rgba(108,110,245,0.3);
+      color: var(--accent); border-radius: 20px; padding: 3px 10px;
+      font-size: 12px; font-weight: 500;
+    }
+    .chip-x {
+      cursor: pointer; opacity: 0.6; font-size: 14px; line-height: 1;
+      margin-left: 1px;
+    }
+    .chip-x:hover { opacity: 1; }
 
     /* ── Multi-select filters ── */
     .ms-wrap { position: relative; display: inline-block; }
@@ -448,15 +468,37 @@
     <div class="filter-row1">
       <input type="text" id="search" placeholder="Search all fields&#8230;" oninput="applyFilters()">
       <span class="filter-count" id="filter-count"></span>
+      <button class="filter-toggle-btn" id="filter-toggle-btn" onclick="toggleFilterPanel()">
+        &#8862; Filters <span id="filter-badge" class="filter-badge" style="display:none">0</span> &#9662;
+      </button>
       <button class="btn" onclick="clearFilters()">Clear</button>
     </div>
-    <div class="filter-row2" id="filter-row2"></div>
-    <div class="filter-row3">
-      <span class="dur-label">Duration:</span>
-      <input type="number" id="dur-min" placeholder="min" min="0" step="1" oninput="applyFilters()">
-      <span class="dur-label">&#8211;</span>
-      <input type="number" id="dur-max" placeholder="max" min="0" step="1" oninput="applyFilters()">
-      <span class="dur-label">sec</span>
+    <div class="filter-chips" id="filter-chips" style="display:none"></div>
+    <div class="filter-panel-body" id="filter-panel-body">
+      <div class="filter-group">
+        <div class="filter-group-label">Brand &amp; Type</div>
+        <div class="filter-group-items" id="fgi-brand-type"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Hooks &amp; Style</div>
+        <div class="filter-group-items" id="fgi-hooks"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Tags</div>
+        <div class="filter-group-items" id="fgi-tags"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Technical</div>
+        <div class="filter-group-items" id="fgi-tech">
+          <div class="filter-row3" style="margin-top:4px; width:100%">
+            <span class="dur-label">Duration:</span>
+            <input type="number" id="dur-min" placeholder="min" min="0" step="1" oninput="applyFilters();updateChips()">
+            <span class="dur-label">&#8211;</span>
+            <input type="number" id="dur-max" placeholder="max" min="0" step="1" oninput="applyFilters();updateChips()">
+            <span class="dur-label">sec</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -519,6 +561,13 @@
     { id: "persona",     label: "Persona",       field: "presenter_persona", mv: true  },
     { id: "main-el",     label: "Main Elements", field: "main_elements",     mv: true  },
   ];
+  const FILTER_GROUPS = {
+    "brand-type": ["brand","product","type","hero","voice-over"],
+    "hooks":      ["visual-hook","audio-hook","audio-style","pacing"],
+    "tags":       ["tone","cta","feature","persona","main-el"],
+    "tech":       ["language","size"],
+  };
+
   let filterState = {};
   FILTER_DEFS.forEach(f => { filterState[f.id] = new Set(); });
 
@@ -689,8 +738,20 @@
         else { if (raw) opts[f.id].add(String(raw)); }
       });
     });
-    const row2 = document.getElementById("filter-row2");
-    row2.innerHTML = FILTER_DEFS.map(f => buildMsWrap(f, opts[f.id])).join("");
+    Object.entries(FILTER_GROUPS).forEach(([groupId, ids]) => {
+      const container = document.getElementById("fgi-" + groupId);
+      if (!container) return;
+      const wraps = ids.map(id => {
+        const f = FILTER_DEFS.find(f => f.id === id);
+        return f ? buildMsWrap(f, opts[f.id]) : "";
+      }).join("");
+      // Preserve duration row inside tech group
+      if (groupId === "tech") {
+        container.insertAdjacentHTML("afterbegin", wraps);
+      } else {
+        container.innerHTML = wraps;
+      }
+    });
   }
 
   function buildMsWrap(def, values) {
@@ -710,6 +771,49 @@
     </div>`;
   }
 
+  function toggleFilterPanel() {
+    document.getElementById("filter-panel-body").classList.toggle("open");
+    document.getElementById("filter-toggle-btn").classList.toggle("active");
+  }
+
+  function updateChips() {
+    const chips = [];
+    FILTER_DEFS.forEach(f => {
+      const sel = filterState[f.id];
+      if (!sel || sel.size === 0) return;
+      const vals = [...sel].join(", ");
+      chips.push(`<span class="filter-chip"><b>${esc(f.label)}</b>: ${esc(vals)}<span class="chip-x" onclick="clearOneFilter('${f.id}')">&#215;</span></span>`);
+    });
+    const durMin = document.getElementById("dur-min")?.value || "";
+    const durMax = document.getElementById("dur-max")?.value || "";
+    if (durMin || durMax) {
+      chips.push(`<span class="filter-chip"><b>Duration</b>: ${esc(durMin)||""}&#8211;${esc(durMax)||""}s<span class="chip-x" onclick="clearDuration()">&#215;</span></span>`);
+    }
+    const el = document.getElementById("filter-chips");
+    if (!el) return;
+    el.innerHTML = chips.join("");
+    el.style.display = chips.length ? "" : "none";
+    const badge = document.getElementById("filter-badge");
+    badge.textContent = chips.length;
+    badge.style.display = chips.length ? "" : "none";
+    document.getElementById("filter-toggle-btn")?.classList.toggle("active", chips.length > 0);
+  }
+
+  function clearOneFilter(id) {
+    filterState[id] = new Set();
+    updateMsBtn(id);
+    document.querySelectorAll("#ms-panel-" + id + ' input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+    applyFilters();
+    updateChips();
+  }
+
+  function clearDuration() {
+    document.getElementById("dur-min").value = "";
+    document.getElementById("dur-max").value = "";
+    applyFilters();
+    updateChips();
+  }
+
   function toggleMsPanel(id) {
     FILTER_DEFS.forEach(f => {
       if (f.id !== id) document.getElementById("ms-panel-" + f.id)?.classList.remove("open");
@@ -722,6 +826,7 @@
     else filterState[filterId].delete(value);
     updateMsBtn(filterId);
     applyFilters();
+    updateChips();
   }
 
   function updateMsBtn(id) {
@@ -776,6 +881,7 @@
     document.getElementById("dur-min").value = "";
     document.getElementById("dur-max").value = "";
     applyFilters();
+    updateChips();
   }
 
   // ── Sort ──────────────────────────────────────────────
