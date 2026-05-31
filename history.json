@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-31T08:42:38Z",
+  "last_updated": "2026-05-31T08:58:29Z",
   "entries": [
     {
       "id": "3d42eb13",
@@ -402,6 +402,46 @@
         "pacing": "steady",
         "hook_line": "That feeling when you see your idea become a dot com, it changes everything.",
         "call_to_action": "search your domain on Wix"
+      }
+    },
+    {
+      "id": "43585101",
+      "filename": "Wix 1 widescreen final.mov",
+      "fingerprint": {
+        "size_bytes": 53926787,
+        "duration_seconds": 44.2
+      },
+      "analyzed_at": "2026-05-31T08:58:29Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Comedic Rap Ad (Widescreen)",
+        "brand": "wix",
+        "product": "builder",
+        "video_type": "presenter",
+        "feature": [
+          "AI site generation",
+          "drag-and-drop"
+        ],
+        "hero": "man",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "product UI demo",
+          "split-screen composite",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "comedic presenter"
+        ],
+        "key_message": "Wix Harmony builds any website you can imagine from a single text prompt",
+        "tone_of_voice": "Comedic & Over-the-Top",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "I've got an idea for a business online",
+        "call_to_action": "no explicit CTA"
       }
     }
   ]
