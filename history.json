@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-05-31T08:58:29Z",
+  "last_updated": "2026-06-15T16:58:50Z",
   "entries": [
     {
       "id": "3d42eb13",
@@ -405,29 +405,28 @@
       }
     },
     {
-      "id": "43585101",
-      "filename": "Wix 1 widescreen final.mov",
+      "id": "fa6548c7",
+      "filename": "Harmony Jared Ho 43 sec Partnerships.mov",
       "fingerprint": {
         "size_bytes": 53926787,
         "duration_seconds": 44.2
       },
-      "analyzed_at": "2026-05-31T08:58:29Z",
+      "analyzed_at": "2026-06-15T16:58:50Z",
       "card": {
-        "video_id": "Wix Harmony \u2014 Comedic Rap Ad (Widescreen)",
+        "video_id": "Wix Harmony \u2014 Comedic Rap Ad (Famous & Fur)",
         "brand": "wix",
         "product": "builder",
-        "video_type": "presenter",
         "feature": [
-          "AI site generation",
-          "drag-and-drop"
+          "AI site generation"
         ],
         "hero": "man",
+        "video_type": "presenter",
         "main_elements": [
           "talking head",
           "screen recording",
           "product UI demo",
-          "split-screen composite",
-          "AI-generated content"
+          "AI-generated content",
+          "animated text captions"
         ],
         "presenter_persona": [
           "comedic presenter"
@@ -439,8 +438,672 @@
         "audio_style": "VO + music",
         "voice_over": "yes",
         "language": "English",
+        "size": "1920x1080",
         "pacing": "fast-cut",
         "hook_line": "I've got an idea for a business online",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "d441f472",
+      "filename": "Best of AI Domain Ho 50 sec V2.mp4",
+      "fingerprint": {
+        "size_bytes": 3735166,
+        "duration_seconds": 49.9
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Domain \u2014 \"Smart Founders\" UGC (Best-of Vertical)",
+        "brand": "wix",
+        "product": "domain",
+        "feature": [
+          "domain registration"
+        ],
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "animated text captions",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "everyday entrepreneur"
+        ],
+        "key_message": "Claim your domain name before someone else does \u2014 Wix makes it fast and affordable",
+        "tone_of_voice": "Urgent & Relatable",
+        "visual_hook": "bold text",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "640x360",
+        "pacing": "fast-cut",
+        "hook_line": "Smart founders know something most people miss.",
+        "call_to_action": "search your domain on Wix"
+      }
+    },
+    {
+      "id": "d96a9dd5",
+      "filename": "CuppaPug Domain Ho 20 sec V2.mp4",
+      "fingerprint": {
+        "size_bytes": 100028322,
+        "duration_seconds": 20.8
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Domain \u2014 CuppaPug Owner Story",
+        "brand": "wix",
+        "product": "domain",
+        "feature": [
+          "domain registration"
+        ],
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": [
+          "screen recording",
+          "product UI demo",
+          "client website showcase",
+          "animated text captions"
+        ],
+        "presenter_persona": [
+          "everyday entrepreneur"
+        ],
+        "key_message": "Claim your domain name before someone else does \u2014 Wix makes it fast and affordable",
+        "tone_of_voice": "Relatable & Playful",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "fast-cut",
+        "hook_line": "I wanted the word cuppa as a cup of tea, but I thought it'd be great mixed with pug.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "ccc04cfc",
+      "filename": "Domain Product Ho 20 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 107068720,
+        "duration_seconds": 23.2
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Domain \u2014 \"What's Yours\" Motion",
+        "brand": "wix",
+        "product": "domain",
+        "feature": [
+          "domain registration"
+        ],
+        "hero": "none",
+        "video_type": "motion",
+        "main_elements": [
+          "bold text overlay",
+          "AI-generated content",
+          "animation effects demo"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "It all starts with a domain \u2014 claim your space online",
+        "tone_of_voice": "Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "fast-cut",
+        "hook_line": "Your perfect domain is out there.",
+        "call_to_action": "search your domain on Wix"
+      }
+    },
+    {
+      "id": "b8a32093",
+      "filename": "Harmony Generation of Creation Ho 15 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 66173621,
+        "duration_seconds": 15.0
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Generation of Creation (15s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "both",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "split-screen composite",
+          "client website showcase"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony lets you create the way you think \u2014 vision and technology as one",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "fast-cut",
+        "hook_line": "Welcome to the new generation of web creation, where your vision and technology work as one.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "01b53428",
+      "filename": "Harmony Generation of Creation Ho 30 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 145558030,
+        "duration_seconds": 30.0
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Generation of Creation (30s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "both",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "client website showcase",
+          "split-screen composite"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony lets you create the way you think \u2014 vision and technology as one",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "fast-cut",
+        "hook_line": "Welcome to the new generation of web creation, where your vision and technology work as one.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "df4cc314",
+      "filename": "Harmony Jeffrey Ho 30 sec V1.mp4",
+      "fingerprint": {
+        "size_bytes": 79019000,
+        "duration_seconds": 32.6
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 KODA Ceramics (Jeffrey V1)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "screen recording",
+          "client website showcase",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Curious & Aspirational",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "steady",
+        "hook_line": "In the next five seconds you'll see Nadie go from sketch to clay, clay to shape, and become a website.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "d552afa4",
+      "filename": "Harmony Jeffrey Ho 30 sec V2.mp4",
+      "fingerprint": {
+        "size_bytes": 79028257,
+        "duration_seconds": 32.6
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 KODA Ceramics (Jeffrey V2)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "screen recording",
+          "client website showcase",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Curious & Aspirational",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "steady",
+        "hook_line": "This monk started as a sketch in a notebook. Now it has its own website.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "d3d58c67",
+      "filename": "Harmony Motion The New Way To Create Ho 65 Sec.mp4",
+      "fingerprint": {
+        "size_bytes": 677919449,
+        "duration_seconds": 64.2
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 \"New Way To Create\" Fashion Motion",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "bold text overlay",
+          "client website showcase",
+          "animation effects demo"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony lets you create the way you think \u2014 vision and technology as one",
+        "tone_of_voice": "Playful & Bold",
+        "visual_hook": "eye catching",
+        "audio_hook": "music drop",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "fast-cut",
+        "hook_line": "The new way to own your brand with Wix Harmony.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "ef8ef2de",
+      "filename": "Harmony Product Ho 30 sec V3.mp4",
+      "fingerprint": {
+        "size_bytes": 120909778,
+        "duration_seconds": 32.2
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Pixel Control Product Demo (30s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "none",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "bold text overlay",
+          "client website showcase"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "fast-cut",
+        "hook_line": "Welcome to Wix Harmony \u2014 take the speed of AI and mix it with control.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "7213bca3",
+      "filename": "Harmony Product Ho 45 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 186557052,
+        "duration_seconds": 43.1
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Product Demo (45s, Dirtline)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "none",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "bold text overlay",
+          "client website showcase"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "fast-cut",
+        "hook_line": "Welcome to Wix Harmony, where you and AI work together to build a unique brand.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "589bfc9c",
+      "filename": "Harmony Product Ho 90 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 423951810,
+        "duration_seconds": 86.5
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Full Product Demo (90s, Modu)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "none",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "AI-generated content",
+          "bold text overlay",
+          "client website showcase"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing",
+        "visual_hook": "product in action",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "steady",
+        "hook_line": "Welcome to the next generation of website creation. Wix Harmony.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "e314af85",
+      "filename": "Harmony SB Commercial Ho 30 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 75681304,
+        "duration_seconds": 30.0
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 SB Commercial (30s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "client website showcase",
+          "screen recording",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony makes website creation as natural as describing your idea",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "steady",
+        "hook_line": "The way you see an idea in your mind. The way you describe it to a friend. This is how website creation should be.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "3d0dcba5",
+      "filename": "Harmony SB Commercial Ho 60 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 183536723,
+        "duration_seconds": 56.7
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 SB Commercial (60s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "client website showcase",
+          "screen recording",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony makes website creation as natural as describing your idea",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "steady",
+        "hook_line": "The way you see an idea in your mind. The way you describe it to a friend. This is how website creation should be.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "07e9671c",
+      "filename": "Harmony SB Product Ho 55 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 254294460,
+        "duration_seconds": 54.9
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 SB Product Cut (55s, Rubi Marlowe)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "woman",
+        "video_type": "motion",
+        "main_elements": [
+          "product UI demo",
+          "screen recording",
+          "client website showcase",
+          "AI-generated content"
+        ],
+        "presenter_persona": [
+          "none"
+        ],
+        "key_message": "Wix Harmony makes website creation as natural as describing your idea",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "3840x2160",
+        "pacing": "steady",
+        "hook_line": "The way you see an idea in your mind. The way you describe it to a friend. This is how website creation should be.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "6e082cf4",
+      "filename": "Harmony Sambucha Ho 75 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 31426861,
+        "duration_seconds": 74.7
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix Harmony \u2014 Sambucha Kombucha Reviewer UGC",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "AI site generation"
+        ],
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": [
+          "talking head",
+          "screen recording",
+          "product UI demo",
+          "split-screen composite"
+        ],
+        "presenter_persona": [
+          "tech reviewer"
+        ],
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "talking head",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "fast-cut",
+        "hook_line": "Apparently you can go from zero to a complete site in just a single prompt with Wix Harmony.",
+        "call_to_action": "make a website today"
+      }
+    },
+    {
+      "id": "00460385",
+      "filename": "Kevin User Story Ho Short v1 25 sec.mp4",
+      "fingerprint": {
+        "size_bytes": 45511649,
+        "duration_seconds": 24.9
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix \u2014 Kevin Zych Sketch Artist (Short 25s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "client website showcase"
+        ],
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": [
+          "talking head",
+          "client website showcase",
+          "AI-generated content",
+          "screen recording"
+        ],
+        "presenter_persona": [
+          "success story"
+        ],
+        "key_message": "A Wix website helped launch and grow a creative career",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "fast-cut",
+        "hook_line": "I built a Wix website overnight and it helped launch my career as a sketch artist.",
+        "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "35d6ff32",
+      "filename": "The Last Bookstore Ho 75 sec.mov",
+      "fingerprint": {
+        "size_bytes": 1908332244,
+        "duration_seconds": 84.3
+      },
+      "analyzed_at": "2026-06-15T16:58:50Z",
+      "card": {
+        "video_id": "Wix \u2014 Kevin Zych Sketch Artist (Full 75s)",
+        "brand": "wix",
+        "product": "builder",
+        "feature": [
+          "client website showcase"
+        ],
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": [
+          "talking head",
+          "client website showcase",
+          "AI-generated content",
+          "screen recording"
+        ],
+        "presenter_persona": [
+          "success story"
+        ],
+        "key_message": "A Wix website helped launch and grow a creative career",
+        "tone_of_voice": "Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "size": "1920x1080",
+        "pacing": "steady",
+        "hook_line": "I built a website in one night and it completely changed my career.",
         "call_to_action": "no explicit CTA"
       }
     }
