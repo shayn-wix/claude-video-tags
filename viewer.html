@@ -594,6 +594,8 @@
     { key: "feature",           label: "Feature",        defaultOn: false, minWidth: "160px" },
     { key: "filename",          label: "Filename",       defaultOn: false, minWidth: "180px" },
     { key: "duration",          label: "Duration",       defaultOn: false, minWidth: "90px"  },
+    { key: "meta_ad_name",     label: "Meta ad Name",   defaultOn: true,  minWidth: "220px" },
+    { key: "linkedin_ad_name", label: "LinkedIn ad name", defaultOn: true, minWidth: "220px" },
     { key: "analyzed_at",       label: "Analyzed",       defaultOn: true,  minWidth: "120px" },
   ];
 
@@ -988,6 +990,8 @@
     if (key === "main_elements") return { html: renderTagList(c.main_elements), cls: "tag-cell" };
     if (key === "presenter_persona") return { html: renderTagList(c.presenter_persona), cls: "tag-cell" };
     if (key === "feature") return { html: renderTagList(c.feature), cls: "tag-cell" };
+    if (key === "meta_ad_name")     return { html: esc(c.meta_ad_name || "&#8212;"), cls: "scroll-cell" };
+    if (key === "linkedin_ad_name") return { html: esc(c.linkedin_ad_name || "&#8212;"), cls: "scroll-cell" };
     if (key === "filename")   return { html: esc(entry.filename || "&#8212;"), cls: "muted" };
     if (key === "duration")   return { html: entry.fingerprint?.duration_seconds ? esc(entry.fingerprint.duration_seconds + "s") : "&#8212;", cls: "muted" };
     if (key === "analyzed_at") {
@@ -1058,6 +1062,7 @@
     const cols = ["video_id","brand","product","hero","video_type","feature","main_elements",
                   "presenter_persona","key_message","tone_of_voice","visual_hook","audio_hook",
                   "audio_style","voice_over","language","size","pacing","hook_line","call_to_action",
+                  "meta_ad_name","linkedin_ad_name",
                   "filename","duration_seconds","analyzed_at"];
     const rows = [cols.join(",")];
     filtered.forEach(e => {
