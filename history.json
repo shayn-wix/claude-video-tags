@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2026-06-15T16:58:50Z",
+  "last_updated": "2026-06-16T19:14:02Z",
   "entries": [
     {
       "id": "3d42eb13",
@@ -1105,6 +1105,1340 @@
         "pacing": "steady",
         "hook_line": "I built a website in one night and it completely changed my career.",
         "call_to_action": "no explicit CTA"
+      }
+    },
+    {
+      "id": "b7c2c706",
+      "filename": "4_5- V1 - Ben Kaluza.mp4",
+      "fingerprint": {
+        "size_bytes": 132837050,
+        "duration_seconds": 54.4
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "This might just be one of the best ways I've found to build your own website without any technical knowledge and still have it look professional and feel like you.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "87c52602",
+      "filename": "4_5- V2 - Ben Kaluza.mp4",
+      "fingerprint": {
+        "size_bytes": 132860679,
+        "duration_seconds": 54.5
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "If you've been putting off building a website because you don't know where to start, I might have just found a solution for you.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "15cb83af",
+      "filename": "4_5- V3 - Ben Kaluza.mp4",
+      "fingerprint": {
+        "size_bytes": 133152472,
+        "duration_seconds": 54.5
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "If you've been wanting to build a website but you can't choose between using AI or not, I just found a solution that lets you use both whenever you want.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "b522cfe4",
+      "filename": "Ben Kaluza v4-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 188851410,
+        "duration_seconds": 53.0
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "This is how you can easily build your own website using AI but still have full control to fine tune everything exactly how you want.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "1efba3ed",
+      "filename": "Ben Kaluza v5-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 187537576,
+        "duration_seconds": 53.1
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "I just found a website builder that uses AI to build your site in minutes and then gives you full manual control to refine everything after.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "9a1f5a5c",
+      "filename": "Ben Kaluza v6-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 192030990,
+        "duration_seconds": 53.7
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, vibe coding, drag-and-drop editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, AI-generated content",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "This website builder uses AI to design and build your site in a matter of minutes and then gives you the tools to fine tune it exactly how you want.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "c3152397",
+      "filename": "Brandon Armstrong Intro1_45.mp4",
+      "fingerprint": {
+        "size_bytes": 228194056,
+        "duration_seconds": 49.6
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Curious & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Being creative means carving my own path in everything I make, and Wix Harmony is a power tool I never knew I needed.",
+        "call_to_action": "no explicit CTA",
+        "size": "2000x2500"
+      }
+    },
+    {
+      "id": "db5dc092",
+      "filename": "Brandon Armstrong intro2_45.mp4",
+      "fingerprint": {
+        "size_bytes": 227669214,
+        "duration_seconds": 49.6
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Curious & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Traveling and creating is what I do, but the real goal? Building something bigger than myself.",
+        "call_to_action": "no explicit CTA",
+        "size": "2000x2500"
+      }
+    },
+    {
+      "id": "06b86d27",
+      "filename": "Brandon Armstrong intro 3 45.mp4",
+      "fingerprint": {
+        "size_bytes": 264384477,
+        "duration_seconds": 49.6
+      },
+      "analyzed_at": "2026-06-16T19:13:56Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Curious & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Everything starts with an idea \u2014 whether it's a product, a business, or even a trip across the world.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "7a72821a",
+      "filename": "Caleb v1-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 825478987,
+        "duration_seconds": 64.8
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Alright, so ever since I was a kid, I had the obsession to keep moving.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "f175dd9c",
+      "filename": "Caleb v2-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 825965826,
+        "duration_seconds": 64.8
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Surfing taught me something early on \u2014 you move with the wave, not against it.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "3b9062c1",
+      "filename": "Caleb v3-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 837709308,
+        "duration_seconds": 65.7
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "I'm all about trying new things \u2014 surfing's my latest challenge, and building a site with Wix Harmony is my other adventure.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "598f8d1a",
+      "filename": "Finn v1-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 80249769,
+        "duration_seconds": 45.9
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Hello, my name is Finn. I'm big into storytelling, cameras, and traveling \u2014 so much that I turned it into my full-time job.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "4715bd0d",
+      "filename": "Finn v2-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 67375040,
+        "duration_seconds": 37.7
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Hi, I'm Finn. I'm out here living through my thing and Wix Harmony lets me show what that really looks like.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "48e7002d",
+      "filename": "Finn v3-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 74031226,
+        "duration_seconds": 42.4
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Hello, I'm Finn. Every trip, every film, every photo I take is a little piece of my story.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2160"
+      }
+    },
+    {
+      "id": "770fbd07",
+      "filename": "Isabel v1 4x5.MP4",
+      "fingerprint": {
+        "size_bytes": 13636372,
+        "duration_seconds": 67.7
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "For a long time, my work was scattered across different platforms, and none of it really felt cohesive or professional.",
+        "call_to_action": "no explicit CTA",
+        "size": "672x848"
+      }
+    },
+    {
+      "id": "a18d205d",
+      "filename": "Isabel v2-4x5.MP4",
+      "fingerprint": {
+        "size_bytes": 12494730,
+        "duration_seconds": 62.4
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "If you care about your craft, your website should reflect that.",
+        "call_to_action": "no explicit CTA",
+        "size": "672x848"
+      }
+    },
+    {
+      "id": "04bedbf0",
+      "filename": "Isabel v3-4x5.MP4",
+      "fingerprint": {
+        "size_bytes": 13453162,
+        "duration_seconds": 66.9
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "As creatives, we spend a lot of time refining what we make \u2014 the details matter, the quality matters, so our website should too.",
+        "call_to_action": "no explicit CTA",
+        "size": "672x848"
+      }
+    },
+    {
+      "id": "5af1fa3f",
+      "filename": "Jose v1-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 73082477,
+        "duration_seconds": 42.8
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit",
+        "hero": "both",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "question",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Let me show you something \u2014 the website for Art Direct, boom.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "d956c076",
+      "filename": "Jose v2-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 71367723,
+        "duration_seconds": 41.7
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit",
+        "hero": "both",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "You know, an AI website is either too locked or too basic, right? But with Wix Harmony, it actually feels smooth.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "b9de9fb4",
+      "filename": "Jose v3-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 65737075,
+        "duration_seconds": 38.5
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit",
+        "hero": "both",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "I thought AI websites were clunky, but then I found Wix Harmony.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "3a714f50",
+      "filename": "Katerina intro 1 4_5.mov",
+      "fingerprint": {
+        "size_bytes": 67001962,
+        "duration_seconds": 39.7
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, product listings",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "When I design something, I don't start with the sewing machine. I start with a thought.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "186a4694",
+      "filename": "Katerina intro 2 4_5.mov",
+      "fingerprint": {
+        "size_bytes": 71425791,
+        "duration_seconds": 42.2
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, product listings",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "Before this was this, and before this was this \u2014 Wix Harmony is the first step to making any idea a reality.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "f024b9f3",
+      "filename": "Katerina intro 3 4_5.mov",
+      "fingerprint": {
+        "size_bytes": 64795349,
+        "duration_seconds": 38.3
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, product listings",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "Design starts with the vision.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "4f80e6d9",
+      "filename": "Katerina v1-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 57472985,
+        "duration_seconds": 44.6
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "Every time I visit Italy, I fall in love with it more and more.",
+        "call_to_action": "no explicit CTA",
+        "size": "864x1080"
+      }
+    },
+    {
+      "id": "a7773edf",
+      "filename": "Katerina v2-4_5.MOV",
+      "fingerprint": {
+        "size_bytes": 54749056,
+        "duration_seconds": 43.4
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "Some trips you just want to keep \u2014 not just the photos, the whole feeling of it.",
+        "call_to_action": "no explicit CTA",
+        "size": "1728x2160"
+      }
+    },
+    {
+      "id": "0cb90b32",
+      "filename": "Katerina v3-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 55009207,
+        "duration_seconds": 43.1
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony turns your idea into a website \u2014 just describe it to Aria",
+        "tone_of_voice": "Reflective & Aspirational, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "I'm in Italy right now and I keep thinking how hard it is to capture what it actually feels like to be here.",
+        "call_to_action": "no explicit CTA",
+        "size": "1728x2160"
+      }
+    },
+    {
+      "id": "e0d3ff9c",
+      "filename": "Melissa v1-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 61342687,
+        "duration_seconds": 39.6
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, image gallery",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "I'm stressed. I just finished a painting I love and now I need to make a website that looks just as good.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "801a08a5",
+      "filename": "Melissa v2-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 64120293,
+        "duration_seconds": 41.4
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, image gallery",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "There comes a time when every artist has to put the brush down and open up a computer.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "95a74d53",
+      "filename": "Melissa v3-4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 61347092,
+        "duration_seconds": 39.6
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, image gallery",
+        "hero": "woman",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, client website showcase, animated text captions",
+        "presenter_persona": "creative professional",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Relatable & Playful, Curious & Aspirational",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Being an artist means spending all day making art, not building my website.",
+        "call_to_action": "no explicit CTA",
+        "size": "1080x1350"
+      }
+    },
+    {
+      "id": "7fb55697",
+      "filename": "Sam Huxter 4-5 1.mp4",
+      "fingerprint": {
+        "size_bytes": 79246193,
+        "duration_seconds": 92.8
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, AI image editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, product UI demo",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "question",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "What if you can build a premium, business-ready website in minutes using AI but still have pixel-level control?",
+        "call_to_action": "no explicit CTA",
+        "size": "1350x1080"
+      }
+    },
+    {
+      "id": "41539199",
+      "filename": "Sam Huxter 4-5 2.mp4",
+      "fingerprint": {
+        "size_bytes": 82864678,
+        "duration_seconds": 96.1
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, AI image editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, product UI demo",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "question",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "What if you could create a complete professional website using nothing but a single text prompt?",
+        "call_to_action": "no explicit CTA",
+        "size": "1350x1080"
+      }
+    },
+    {
+      "id": "013829e1",
+      "filename": "Sam Huxter 4-5 3.mp4",
+      "fingerprint": {
+        "size_bytes": 80968326,
+        "duration_seconds": 94.1
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, brand kit, AI image editing",
+        "hero": "man",
+        "video_type": "presenter",
+        "main_elements": "talking head, screen recording, animated text captions, product UI demo",
+        "presenter_persona": "tech reviewer",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "As someone who's built loads of landing pages and websites in my time, having to choose between speed and creative control was always a pain.",
+        "call_to_action": "no explicit CTA",
+        "size": "1350x1080"
+      }
+    },
+    {
+      "id": "dbb2dfdd",
+      "filename": "Sean [4x5] H1 .mp4",
+      "fingerprint": {
+        "size_bytes": 237537801,
+        "duration_seconds": 67.3
+      },
+      "analyzed_at": "2026-06-16T19:13:57Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony rebuilds your website fast so you don't waste time on busywork",
+        "tone_of_voice": "Urgent & Relatable, Confident & Intriguing",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "If you want to be successful in life, you can't waste time doing unnecessary work.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "8473dedd",
+      "filename": "Sean [4x5] H2.mp4",
+      "fingerprint": {
+        "size_bytes": 233321907,
+        "duration_seconds": 66.1
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony rebuilds your website fast so you don't waste time on busywork",
+        "tone_of_voice": "Urgent & Relatable, Confident & Intriguing",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "I was about to waste my whole Saturday rebuilding my website, but then I saw Wix Harmony and I got it done perfect in half the time.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "d6162f17",
+      "filename": "Sean [4x5] H3.mp4",
+      "fingerprint": {
+        "size_bytes": 236050831,
+        "duration_seconds": 66.9
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony rebuilds your website fast so you don't waste time on busywork",
+        "tone_of_voice": "Urgent & Relatable, Confident & Intriguing",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "The most expensive thing that you can do with your time is spend it on problems that already have solutions.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "6734e2a6",
+      "filename": "Tanner v1-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 9560562,
+        "duration_seconds": 55.0
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "I didn't just become a photographer. I accidentally became an entire production company.",
+        "call_to_action": "no explicit CTA",
+        "size": "960x960"
+      }
+    },
+    {
+      "id": "ca157a3c",
+      "filename": "Tanner v2-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 9695201,
+        "duration_seconds": 55.7
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "I thought using my camera would be the hardest part of this job. Turns out it's everything else.",
+        "call_to_action": "no explicit CTA",
+        "size": "960x960"
+      }
+    },
+    {
+      "id": "783d1c53",
+      "filename": "Tanner v3-4_5.mov",
+      "fingerprint": {
+        "size_bytes": 9406145,
+        "duration_seconds": 54.2
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "screen recording, client website showcase, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds a portfolio that authentically reflects a creator's work and identity",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "relatable complaint",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Nobody warned me that being a creator means doing literally everything.",
+        "call_to_action": "no explicit CTA",
+        "size": "960x960"
+      }
+    },
+    {
+      "id": "abe97d3e",
+      "filename": "Will 4_5.mp4",
+      "fingerprint": {
+        "size_bytes": 798147258,
+        "duration_seconds": 74.4
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, client website showcase, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Reflective & Aspirational, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "slow-burn",
+        "hook_line": "For as long as creatives have existed we've had the same problem: getting people to see our work.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "0c3f0ac4",
+      "filename": "Wix - 4-3 Intro 1.mp4",
+      "fingerprint": {
+        "size_bytes": 862952466,
+        "duration_seconds": 49.4
+      },
+      "analyzed_at": "2026-06-16T19:13:58Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "Five seconds \u2014 that's all it took me to build my website.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "c99079ea",
+      "filename": "Wix - 4-3 Intro 2 (1).mp4",
+      "fingerprint": {
+        "size_bytes": 627945507,
+        "duration_seconds": 52.8
+      },
+      "analyzed_at": "2026-06-16T19:13:59Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony blends AI speed with pixel-level control to build a site that's entirely yours",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "bold statement",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "At some point in your career, you're going to need one of these.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "a53d27c3",
+      "filename": "Wix - 4-3 Intro 3.mp4",
+      "fingerprint": {
+        "size_bytes": 459686675,
+        "duration_seconds": 39.4
+      },
+      "analyzed_at": "2026-06-16T19:13:59Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation, client website showcase",
+        "hero": "man",
+        "video_type": "user story",
+        "main_elements": "talking head, screen recording, animated text captions, lifestyle b-roll",
+        "presenter_persona": "content creator",
+        "key_message": "Wix Harmony builds any website you can imagine from a single text prompt",
+        "tone_of_voice": "Confident & Intriguing, Aspirational & Results-Driven",
+        "visual_hook": "eye catching",
+        "audio_hook": "question",
+        "audio_style": "voiceover",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "steady",
+        "hook_line": "What if you could build everything you need in a website with just a single prompt?",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "f9f3ffdf",
+      "filename": "wix harmony bykody (1) 4,5.mp4",
+      "fingerprint": {
+        "size_bytes": 102255647,
+        "duration_seconds": 40.6
+      },
+      "analyzed_at": "2026-06-16T19:13:59Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony builds any website you can imagine from a single text prompt",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "question",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "What are you doing? \u2014 Creating a website. Just 290 hours left.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "044ff43d",
+      "filename": "wix harmony bykody (2) 4,5.mp4",
+      "fingerprint": {
+        "size_bytes": 109346560,
+        "duration_seconds": 43.3
+      },
+      "analyzed_at": "2026-06-16T19:13:59Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony builds any website you can imagine from a single text prompt",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "question",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Have you ever tried creating a website?",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
+      }
+    },
+    {
+      "id": "230ac8b9",
+      "filename": "wix harmony bykody (3) 4,5.mp4",
+      "fingerprint": {
+        "size_bytes": 98896986,
+        "duration_seconds": 39.3
+      },
+      "analyzed_at": "2026-06-16T19:13:59Z",
+      "card": {
+        "brand": "wix",
+        "product": "builder",
+        "feature": "AI site generation",
+        "hero": "man",
+        "video_type": "UGC",
+        "main_elements": "talking head, screen recording, animated text captions",
+        "presenter_persona": "comedic presenter",
+        "key_message": "Wix Harmony builds any website you can imagine from a single text prompt",
+        "tone_of_voice": "Comedic & Over-the-Top, Relatable & Playful",
+        "visual_hook": "pattern interrupt",
+        "audio_hook": "bold statement",
+        "audio_style": "VO + music",
+        "voice_over": "yes",
+        "language": "English",
+        "pacing": "fast-cut",
+        "hook_line": "Creating a website has never been so smooth now that Wix Harmony is here.",
+        "call_to_action": "no explicit CTA",
+        "size": "2160x2700"
       }
     }
   ]
