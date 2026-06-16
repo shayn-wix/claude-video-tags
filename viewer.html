@@ -541,6 +541,7 @@
   const GITHUB_RAW   = "https://raw.githubusercontent.com/shayn-wix/claude-video-tags/main/history.json";
   const LOCAL_FALLBACK = "./history.json";
   const LS_KEY       = "video-analysis-cols-v1";
+  const LS_KNOWN_KEY = LS_KEY + "_known";
 
   // ── Filter definitions ────────────────────────────────
   const FILTER_DEFS = [
@@ -607,7 +608,6 @@
   let visibleCols = loadColPrefs();
 
   // ── Column prefs ─────────────────────────────────────
-  const LS_KNOWN_KEY = LS_KEY + "_known";
   function loadColPrefs() {
     try {
       const saved = JSON.parse(localStorage.getItem(LS_KEY));
