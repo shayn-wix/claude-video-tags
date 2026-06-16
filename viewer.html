@@ -607,11 +607,23 @@
   let visibleCols = loadColPrefs();
 
   // ── Column prefs ─────────────────────────────────────
+  const LS_KNOWN_KEY = LS_KEY + "_known";
   function loadColPrefs() {
     try {
       const saved = JSON.parse(localStorage.getItem(LS_KEY));
-      if (saved && Array.isArray(saved)) return new Set(saved);
+      if (saved && Array.isArray(saved)) {
+        const cols = new Set(saved);
+        // Auto-show newly-added default columns the user has never seen before
+        let known = [];
+        try { known = JSON.parse(localStorage.getItem(LS_KNOWN_KEY)) || []; } catch (_) {}
+        const knownSet = new Set(known);
+        COLUMNS.forEach(c => { if (c.defaultOn && !knownSet.has(c.key)) cols.add(c.key); });
+        localStorage.setItem(LS_KNOWN_KEY, JSON.stringify(COLUMNS.map(c => c.key)));
+        localStorage.setItem(LS_KEY, JSON.stringify([...cols]));
+        return cols;
+      }
     } catch (_) {}
+    localStorage.setItem(LS_KNOWN_KEY, JSON.stringify(COLUMNS.map(c => c.key)));
     return new Set(COLUMNS.filter(c => c.defaultOn).map(c => c.key));
   }
   function saveColPrefs() {
