@@ -60,14 +60,18 @@
     "Wix Harmony rebuilds your website fast so you don't waste time on busywork"
   ],
   "tone_of_voice": [
-    "Aspirational & Results-Driven",
-    "Playful & Bold",
-    "Relatable & Playful",
-    "Confident & Intriguing",
-    "Urgent & Relatable",
-    "Comedic & Over-the-Top",
-    "Curious & Aspirational",
-    "Reflective & Aspirational"
+    "Aspirational",
+    "Results-Driven",
+    "Playful",
+    "Bold",
+    "Relatable",
+    "Confident",
+    "Intriguing",
+    "Urgent",
+    "Comedic",
+    "Over-the-Top",
+    "Curious",
+    "Reflective"
   ],
   "hook_line": [
     "This one shift took our website builds to the next level and cut production time in half.",
